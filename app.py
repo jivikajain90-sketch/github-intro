@@ -5,6 +5,8 @@ import plotly.express as px
 # Initialize app with Bootstrap theme
 app = Dash(__name__, external_stylesheets=['https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css'])
 
+server = app.server
+
 # Load data from CSV
 df = pd.read_csv('international students data.csv')
 
