@@ -7,6 +7,86 @@ app = Dash(__name__, external_stylesheets=['https://cdn.jsdelivr.net/npm/bootstr
 
 server = app.server
 
+# Add custom CSS for checkbox styling
+app.index_string = '''
+<!DOCTYPE html>
+<html>
+    <head>
+        {%metas%}
+        <title>{%title%}</title>
+        {%favicon%}
+        {%css%}
+        <style>
+            /* Custom checkbox styling */
+            .custom-checkbox input[type="checkbox"] {
+                width: 14px;
+                height: 14px;
+                margin-right: 4px;
+                accent-color: #5a9bd5;
+                cursor: pointer;
+            }
+            
+            .custom-checkbox label {
+                cursor: pointer;
+                transition: color 0.2s ease;
+                font-weight: 500;
+                color: #495057;
+            }
+            
+            .custom-checkbox label:hover {
+                color: #5a9bd5;
+            }
+            
+            /* Checked state styling */
+            .custom-checkbox input[type="checkbox"]:checked + label {
+                color: #5a9bd5;
+                font-weight: 600;
+            }
+            
+            /* Filter section headers */
+            .filter-header {
+                border-bottom: 2px solid #dee2e6;
+                padding-bottom: 3px;
+                font-size: 11px;
+                margin: 0 0 5px 0;
+                font-weight: 600;
+                color: #495057;
+                letter-spacing: 0.5px;
+            }
+            
+            /* Sidebar styling */
+            .sidebar-filters {
+                background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
+                border-right: 1px solid #dee2e6;
+                box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+            }
+            
+            /* Checkbox container styling */
+            .filter-group {
+                background-color: white;
+                padding: 8px;
+                border-radius: 4px;
+                margin-bottom: 10px;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            }
+            
+            /* Hover effect for filter groups */
+            .filter-group:hover {
+                box-shadow: 0 2px 5px rgba(0,0,0,0.12);
+            }
+        </style>
+    </head>
+    <body>
+        {%app_entry%}
+        <footer>
+            {%config%}
+            {%scripts%}
+            {%renderer%}
+        </footer>
+    </body>
+</html>
+'''
+
 # Load data from CSV
 df = pd.read_csv('international students data.csv')
 
@@ -66,12 +146,11 @@ app.layout = html.Div([
     
     # Main Content Row
     html.Div([
-        # Left Sidebar - Filters (Compact Layout)
+        # Left Sidebar - Filters (Compact Layout with enhanced styling)
         html.Div([
             # Location Filter
             html.Div([
-                html.H4('LOCATION', style={'borderBottom': '2px solid #dee2e6', 'paddingBottom': '3px', 
-                                          'fontSize': '11px', 'margin': '0 0 5px 0', 'fontWeight': '600', 'color': '#495057'}),
+                html.H4('LOCATION', className='filter-header'),
                 html.Div([
                     html.Div([
                         dcc.Checklist(
@@ -79,7 +158,7 @@ app.layout = html.Div([
                             options=[{'label': 'ALL', 'value': 'ALL'}],
                             value=['ALL'],
                             labelStyle={'display': 'inline-block', 'marginRight': '8px', 'fontSize': '10px'},
-                            className='form-check',
+                            className='custom-checkbox',
                             style={'marginBottom': '2px'}
                         ),
                         dcc.Checklist(
@@ -87,7 +166,7 @@ app.layout = html.Div([
                             options=[{'label': state, 'value': state} for state in ['TAS', 'VIC', 'NSW']],
                             value=[],
                             labelStyle={'display': 'inline-block', 'marginRight': '8px', 'fontSize': '10px'},
-                            className='form-check',
+                            className='custom-checkbox',
                             style={'marginBottom': '2px'}
                         ),
                     ]),
@@ -97,23 +176,22 @@ app.layout = html.Div([
                             options=[{'label': state, 'value': state} for state in ['SA', 'WA', 'QLD']],
                             value=[],
                             labelStyle={'display': 'inline-block', 'marginRight': '8px', 'fontSize': '10px'},
-                            className='form-check'
+                            className='custom-checkbox'
                         ),
                     ]),
                 ]),
-            ], style={'marginBottom': '12px'}),
+            ], className='filter-group'),
             
             # Industries Filter
             html.Div([
-                html.H4('INDUSTRIES', style={'borderBottom': '2px solid #dee2e6', 'paddingBottom': '3px',
-                                            'fontSize': '11px', 'margin': '0 0 5px 0', 'fontWeight': '600', 'color': '#495057'}),
+                html.H4('INDUSTRIES', className='filter-header'),
                 html.Div([
                     dcc.Checklist(
                         id='industry-filter-all',
                         options=[{'label': 'ALL', 'value': 'ALL'}],
                         value=['ALL'],
                         labelStyle={'display': 'inline-block', 'marginRight': '10px', 'fontSize': '10px'},
-                        className='form-check',
+                        className='custom-checkbox',
                         style={'marginBottom': '2px'}
                     ),
                     dcc.Checklist(
@@ -121,7 +199,7 @@ app.layout = html.Div([
                         options=[{'label': ind, 'value': ind} for ind in ['Health', 'STEM']],
                         value=[],
                         labelStyle={'display': 'inline-block', 'marginRight': '10px', 'fontSize': '10px'},
-                        className='form-check',
+                        className='custom-checkbox',
                         style={'marginBottom': '2px'}
                     ),
                     dcc.Checklist(
@@ -129,7 +207,7 @@ app.layout = html.Div([
                         options=[{'label': ind, 'value': ind} for ind in ['Social Sc.', 'Design']],
                         value=[],
                         labelStyle={'display': 'inline-block', 'marginRight': '8px', 'fontSize': '10px'},
-                        className='form-check',
+                        className='custom-checkbox',
                         style={'marginBottom': '2px'}
                     ),
                     dcc.Checklist(
@@ -137,7 +215,7 @@ app.layout = html.Div([
                         options=[{'label': ind, 'value': ind} for ind in ['Business', 'ED.']],
                         value=[],
                         labelStyle={'display': 'inline-block', 'marginRight': '10px', 'fontSize': '10px'},
-                        className='form-check',
+                        className='custom-checkbox',
                         style={'marginBottom': '2px'}
                     ),
                     dcc.Checklist(
@@ -145,15 +223,14 @@ app.layout = html.Div([
                         options=[{'label': ind, 'value': ind} for ind in ['Prof. Serv', 'SERV.']],
                         value=[],
                         labelStyle={'display': 'inline-block', 'marginRight': '8px', 'fontSize': '10px'},
-                        className='form-check'
+                        className='custom-checkbox'
                     ),
                 ]),
-            ], style={'marginBottom': '12px'}),
+            ], className='filter-group'),
             
             # Study Level Filter
             html.Div([
-                html.H4('STUDY LEVEL', style={'borderBottom': '2px solid #dee2e6', 'paddingBottom': '3px',
-                                             'fontSize': '11px', 'margin': '0 0 5px 0', 'fontWeight': '600', 'color': '#495057'}),
+                html.H4('STUDY LEVEL', className='filter-header'),
                 html.Div([
                     dcc.Checklist(
                         id='study-filter',
@@ -163,7 +240,7 @@ app.layout = html.Div([
                         ],
                         value=['ALL'],
                         labelStyle={'display': 'inline-block', 'marginRight': '10px', 'fontSize': '10px'},
-                        className='form-check',
+                        className='custom-checkbox',
                         style={'marginBottom': '2px'}
                     ),
                     dcc.Checklist(
@@ -173,7 +250,7 @@ app.layout = html.Div([
                         ],
                         value=[],
                         labelStyle={'display': 'block', 'fontSize': '10px'},
-                        className='form-check',
+                        className='custom-checkbox',
                         style={'marginBottom': '2px'}
                     ),
                     dcc.Checklist(
@@ -183,15 +260,14 @@ app.layout = html.Div([
                         ],
                         value=[],
                         labelStyle={'display': 'block', 'fontSize': '10px'},
-                        className='form-check'
+                        className='custom-checkbox'
                     ),
                 ]),
-            ], style={'marginBottom': '12px'}),
+            ], className='filter-group'),
             
             # Employment Type Filter
             html.Div([
-                html.H4('EMPLOYMENT TYPE', style={'borderBottom': '2px solid #dee2e6', 'paddingBottom': '3px',
-                                                 'fontSize': '11px', 'margin': '0 0 5px 0', 'fontWeight': '600', 'color': '#495057'}),
+                html.H4('EMPLOYMENT TYPE', className='filter-header'),
                 html.Div([
                     dcc.Checklist(
                         id='employment-filter',
@@ -201,7 +277,7 @@ app.layout = html.Div([
                         ],
                         value=['ALL'],
                         labelStyle={'display': 'inline-block', 'marginRight': '8px', 'fontSize': '10px'},
-                        className='form-check',
+                        className='custom-checkbox',
                         style={'marginBottom': '2px'}
                     ),
                     dcc.Checklist(
@@ -212,26 +288,25 @@ app.layout = html.Div([
                         ],
                         value=[],
                         labelStyle={'display': 'inline-block', 'marginRight': '8px', 'fontSize': '10px'},
-                        className='form-check'
+                        className='custom-checkbox'
                     ),
                 ]),
-            ], style={'marginBottom': '12px'}),
+            ], className='filter-group'),
             
             # Year Filter
             html.Div([
-                html.H4('YEAR', style={'borderBottom': '2px solid #dee2e6', 'paddingBottom': '3px',
-                                      'fontSize': '11px', 'margin': '0 0 5px 0', 'fontWeight': '600', 'color': '#495057'}),
+                html.H4('YEAR', className='filter-header'),
                 dcc.Checklist(
                     id='year-filter',
                     options=[{'label': 'ALL', 'value': 'ALL'}] +
                             [{'label': str(year), 'value': str(year)} for year in years],
                     value=['ALL'],
                     labelStyle={'display': 'inline-block', 'marginRight': '8px', 'fontSize': '10px'},
-                    className='form-check'
+                    className='custom-checkbox'
                 ),
-            ]),
+            ], className='filter-group'),
             
-        ], className='bg-light border-end', style={'width': '13%', 'display': 'inline-block', 'verticalAlign': 'top',
+        ], className='sidebar-filters', style={'width': '13%', 'display': 'inline-block', 'verticalAlign': 'top',
                   'padding': '12px', 'height': '580px', 'overflowY': 'auto', 'marginRight': '1%'}),
         
         # Middle Section - Maps and Charts (Increased Height)
@@ -391,7 +466,12 @@ def update_kpis(loc_all, loc_states, loc_states2, ind_all, ind1, ind2, ind3, ind
         job_placement = "21K"
     
     if 'Skilled_Visa' in filtered_df.columns:
-        skilled_visa = f"{filtered_df['Skilled_Visa'].sum()/1000:.1f}K"
+        skilled_visa_sum = filtered_df['Skilled_Visa'].sum()/1000
+        # Show decimal only if less than 10K and decimal is not .0
+        if skilled_visa_sum < 10 and skilled_visa_sum % 1 != 0:
+            skilled_visa = f"{skilled_visa_sum:.1f}K"
+        else:
+            skilled_visa = f"{skilled_visa_sum:.0f}K"
     else:
         skilled_visa = "7.5K"
     
@@ -686,7 +766,7 @@ def update_employment_rate(loc_all, loc_states, loc_states2, ind_all, ind1, ind2
     return fig
 
 
-# Callback for gender ratio
+# FIXED Callback for gender ratio - Now properly calculating based on Student_Count
 @app.callback(
     Output('gender-ratio', 'figure'),
     [Input('location-filter', 'value'),
@@ -724,10 +804,19 @@ def update_gender_ratio(loc_all, loc_states, loc_states2, ind_all, ind1, ind2, i
     
     filtered_df = filter_data(locations, industries_filter, study_levels, employment_types, years_filter)
     
-    if 'Gender' in filtered_df.columns and len(filtered_df) > 0:
-        gender_data = filtered_df['Gender'].value_counts().reset_index()
+    if 'Gender' in filtered_df.columns and 'Student_Count' in filtered_df.columns and len(filtered_df) > 0:
+        # Group by Gender and sum the Student_Count for proper aggregation
+        gender_data = filtered_df.groupby('Gender')['Student_Count'].sum().reset_index()
         gender_data.columns = ['Gender', 'Count']
+        
+        # Ensure all gender categories are present even if count is 0
+        all_genders = pd.DataFrame({'Gender': ['Male', 'Female', 'Others']})
+        gender_data = all_genders.merge(gender_data, on='Gender', how='left').fillna(0)
+        
+        # Remove rows with 0 count for cleaner visualization
+        gender_data = gender_data[gender_data['Count'] > 0]
     else:
+        # Default fallback values if columns don't exist
         gender_data = pd.DataFrame({
             'Gender': ['Male', 'Female', 'Others'],
             'Count': [62.5, 25, 12.5]
@@ -787,8 +876,11 @@ def update_migration_reasons(loc_all, loc_states, loc_states2, ind_all, ind1, in
     
     filtered_df = filter_data(locations, industries_filter, study_levels, employment_types, years_filter)
     
-    if 'Migration_Reason' in filtered_df.columns and 'Gender' in filtered_df.columns:
-        migration_data = filtered_df.groupby(['Migration_Reason', 'Gender']).size().reset_index(name='Count')
+    # Fixed: Using Student_Count for aggregation instead of just counting rows
+    if 'Migration_Reason' in filtered_df.columns and 'Gender' in filtered_df.columns and 'Student_Count' in filtered_df.columns:
+        # Group by both Migration_Reason and Gender, summing Student_Count
+        migration_data = filtered_df.groupby(['Migration_Reason', 'Gender'])['Student_Count'].sum().reset_index()
+        migration_data.columns = ['Migration_Reason', 'Gender', 'Count']
         migration_pivot = migration_data.pivot(index='Migration_Reason', columns='Gender', values='Count').fillna(0)
     else:
         migration_pivot = pd.DataFrame({
@@ -833,5 +925,3 @@ def update_migration_reasons(loc_all, loc_states, loc_states2, ind_all, ind1, in
 
 if __name__ == '__main__':
     app.run(debug=True)
-
-
