@@ -667,7 +667,7 @@ def update_nationality(loc_all, loc_states, loc_states2, ind_all, ind1, ind2, in
                  y='Nationality',
                  orientation='h',
                  color='Job_Achieved_Pct',
-                 color_continuous_scale=['#e6f2ff', '#9bc3ff', '#5a9bd5', '#2d5b8b', '#1e3a5f'],  # Navy blue gradient with high contrast
+                 color_continuous_scale=['#add5ff', '#9bc3ff', '#5a9bd5', '#2d5b8b', '#1e3a5f'],  # Navy blue gradient with high contrast
                  text='Job_Achieved_Pct')
     
     fig.update_traces(texttemplate='%{text:.0f}', textposition='inside', textfont=dict(size=10, color='white', weight='bold'))
