@@ -351,14 +351,14 @@ app.layout = html.Div([
                     html.Div('Median Salary', style={'fontSize': '10px', 'color': 'white', 'marginBottom': '3px'}),
                     html.Div(id='median-salary', style={'fontSize': '18px', 'fontWeight': 'bold', 'color': 'white'})
                 ], style={'width': '100%', 'backgroundColor': '#4a90e2',
-                         'padding': '8px', 'textAlign': 'center', 'marginBottom': '5px', 'borderRadius': '4px'}),
+                         'padding': '6px', 'textAlign': 'center', 'marginBottom': '5px', 'borderRadius': '4px'}),
                 
                 html.Div([
                     html.Div('Mean Salary', style={'fontSize': '10px', 'color': 'white', 'marginBottom': '3px'}),
                     html.Div(id='mean-salary', style={'fontSize': '18px', 'fontWeight': 'bold', 'color': 'white'})
                 ], style={'width': '100%', 'backgroundColor': '#4a90e2',
-                         'padding': '8px', 'textAlign': 'center', 'borderRadius': '4px'}),
-            ], className='shadow-sm rounded', style={'marginBottom': '10px', 'backgroundColor': 'white', 'padding': '8px'}),
+                         'padding': '6px', 'textAlign': 'center', 'borderRadius': '4px'}),
+            ], className='shadow-sm rounded', style={'marginBottom': '8px', 'backgroundColor': 'white', 'padding': '6px'}),
             
             # Employment Rate and Gender Ratio
             html.Div([
@@ -390,7 +390,7 @@ app.layout = html.Div([
                        style={'backgroundColor': '#2d5b8b', 'color': 'white', 'padding': '6px',
                               'margin': '0', 'fontSize': '10px', 'textAlign': 'center'}),
                 html.Div([
-                    dcc.Graph(id='migration-reasons', style={'height': '280px'}, config={'displayModeBar': False})
+                    dcc.Graph(id='migration-reasons', style={'height': '250px'}, config={'displayModeBar': False})
                 ], style={'backgroundColor': 'white', 'border': '1px solid #dee2e6', 'padding': '10px'})
             ], className='shadow-sm rounded', style={'backgroundColor': 'white'}),
             
