@@ -309,56 +309,68 @@ app.layout = html.Div([
         ], className='sidebar-filters', style={'width': '13%', 'display': 'inline-block', 'verticalAlign': 'top',
                   'padding': '12px', 'height': '580px', 'overflowY': 'auto', 'marginRight': '1%'}),
         
-        # Middle Section - Maps and Charts (Increased Height)
+        # Middle Section - Maps and Charts with improved boxes and spacing
         html.Div([
             # Regional Split
             html.Div([
                 html.H3('REGIONAL SPLIT - NO. OF INTL. STUDENTS',
                        style={'backgroundColor': '#4a90e2', 'color': 'white', 'padding': '8px',
                               'margin': '0', 'fontSize': '12px'}),
-                dcc.Graph(id='australia-map', style={'height': '530px'}, config={'displayModeBar': False})
-            ], style={'width': '50%', 'display': 'inline-block', 'verticalAlign': 'top', 'marginRight': '2%'}),
+                html.Div([
+                    dcc.Graph(id='australia-map', style={'height': '450px'}, config={'displayModeBar': False})
+                ], style={'backgroundColor': 'white', 'border': '1px solid #dee2e6', 'padding': '10px'})
+            ], className='shadow-sm rounded', style={'width': '49%', 'display': 'inline-block', 
+                     'verticalAlign': 'top', 'marginRight': '2%', 'backgroundColor': 'white'}),
             
             # Job Achievement
             html.Div([
-                html.H3('JOB ACHIEVED - NATIONALITY SPLIT',
+                html.H3('JOB ACHIEVED - NATIONALITY SPLIT (TOP 10)',
                        style={'backgroundColor': '#4a90e2', 'color': 'white', 'padding': '8px',
                               'margin': '0', 'fontSize': '12px'}),
-                dcc.Graph(id='nationality-chart', style={'height': '530px'}, config={'displayModeBar': False})
-            ], style={'width': '48%', 'display': 'inline-block', 'verticalAlign': 'top'}),
+                html.Div([
+                    dcc.Graph(id='nationality-chart', style={'height': '450px'}, config={'displayModeBar': False})
+                ], style={'backgroundColor': 'white', 'border': '1px solid #dee2e6', 'padding': '10px'})
+            ], className='shadow-sm rounded', style={'width': '49%', 'display': 'inline-block', 
+                     'verticalAlign': 'top', 'backgroundColor': 'white'}),
             
         ], style={'width': '48%', 'display': 'inline-block', 'verticalAlign': 'top'}),
         
-        # Right Section - Salary and Demographics
+        # Right Section - Salary and Demographics with boxes
         html.Div([
             # Salary Cards
             html.Div([
                 html.Div([
                     html.Div('Median Salary', style={'fontSize': '10px', 'color': 'white', 'marginBottom': '3px'}),
                     html.Div(id='median-salary', style={'fontSize': '18px', 'fontWeight': 'bold', 'color': 'white'})
-                ], style={'width': '100%', 'backgroundColor': '#6b3fa0',
-                         'padding': '8px', 'textAlign': 'center', 'marginBottom': '5px'}),
+                ], style={'width': '100%', 'backgroundColor': '#4a90e2',
+                         'padding': '8px', 'textAlign': 'center', 'marginBottom': '5px', 'borderRadius': '4px'}),
                 
                 html.Div([
                     html.Div('Mean Salary', style={'fontSize': '10px', 'color': 'white', 'marginBottom': '3px'}),
                     html.Div(id='mean-salary', style={'fontSize': '18px', 'fontWeight': 'bold', 'color': 'white'})
-                ], style={'width': '100%', 'backgroundColor': '#6b3fa0',
-                         'padding': '8px', 'textAlign': 'center'}),
-            ], style={'marginBottom': '10px'}),
+                ], style={'width': '100%', 'backgroundColor': '#5a9bd5',
+                         'padding': '8px', 'textAlign': 'center', 'borderRadius': '4px'}),
+            ], className='shadow-sm rounded', style={'marginBottom': '10px', 'backgroundColor': 'white', 'padding': '8px'}),
             
             # Employment Rate and Gender Ratio
             html.Div([
                 html.Div([
                     html.H3('EMPLOYMENT RATE', style={'backgroundColor': '#4a90e2', 'color': 'white',
                            'padding': '6px', 'margin': '0', 'fontSize': '10px', 'textAlign': 'center'}),
-                    dcc.Graph(id='employment-rate', style={'height': '140px'}, config={'displayModeBar': False})
-                ], style={'width': '48%', 'display': 'inline-block', 'verticalAlign': 'top'}),
+                    html.Div([
+                        dcc.Graph(id='employment-rate', style={'height': '140px'}, config={'displayModeBar': False})
+                    ], style={'backgroundColor': 'white', 'border': '1px solid #dee2e6', 'padding': '5px'})
+                ], className='shadow-sm rounded', style={'width': '48%', 'display': 'inline-block', 
+                         'verticalAlign': 'top', 'backgroundColor': 'white'}),
                 
                 html.Div([
                     html.H3('GENDER RATIO', style={'backgroundColor': '#4a90e2', 'color': 'white',
                            'padding': '6px', 'margin': '0', 'fontSize': '10px', 'textAlign': 'center'}),
-                    dcc.Graph(id='gender-ratio', style={'height': '140px'}, config={'displayModeBar': False})
-                ], style={'width': '48%', 'display': 'inline-block', 'verticalAlign': 'top', 'marginLeft': '2%'}),
+                    html.Div([
+                        dcc.Graph(id='gender-ratio', style={'height': '140px'}, config={'displayModeBar': False})
+                    ], style={'backgroundColor': 'white', 'border': '1px solid #dee2e6', 'padding': '5px'})
+                ], className='shadow-sm rounded', style={'width': '48%', 'display': 'inline-block', 
+                         'verticalAlign': 'top', 'marginLeft': '2%', 'backgroundColor': 'white'}),
             ], style={'marginBottom': '10px'}),
             
             # Migration Reasons
@@ -366,8 +378,10 @@ app.layout = html.Div([
                 html.H3('GRADUATES LEAVING AUSTRALIA%',
                        style={'backgroundColor': '#4a90e2', 'color': 'white', 'padding': '6px',
                               'margin': '0', 'fontSize': '10px', 'textAlign': 'center'}),
-                dcc.Graph(id='migration-reasons', style={'height': '200px'}, config={'displayModeBar': False})
-            ]),
+                html.Div([
+                    dcc.Graph(id='migration-reasons', style={'height': '200px'}, config={'displayModeBar': False})
+                ], style={'backgroundColor': 'white', 'border': '1px solid #dee2e6', 'padding': '10px'})
+            ], className='shadow-sm rounded', style={'backgroundColor': 'white'}),
             
         ], style={'width': '29%', 'display': 'inline-block', 'verticalAlign': 'top', 'marginLeft': '1%'}),
     ], style={'marginTop': '10px'}),
@@ -451,32 +465,51 @@ def update_kpis(loc_all, loc_states, loc_states2, ind_all, ind1, ind2, ind3, ind
     filtered_df = filter_data(locations, industries_filter, study_levels, employment_types, years_filter)
     
     if 'Visa_Applications' in filtered_df.columns:
-        visa_apps = f"{filtered_df['Visa_Applications'].sum()/1000:.0f}K"
+        visa_apps_sum = filtered_df['Visa_Applications'].sum()
+        if visa_apps_sum >= 1000:
+            visa_apps = f"{visa_apps_sum/1000:.0f}K"
+        else:
+            visa_apps = f"{visa_apps_sum:.0f}"
     else:
         visa_apps = "100K"
     
     if 'Post_Study_Work' in filtered_df.columns:
-        post_study = f"{filtered_df['Post_Study_Work'].sum()/1000:.0f}K"
+        post_study_sum = filtered_df['Post_Study_Work'].sum()
+        if post_study_sum >= 1000:
+            post_study = f"{post_study_sum/1000:.0f}K"
+        else:
+            post_study = f"{post_study_sum:.0f}"
     else:
         post_study = "30K"
     
     if 'Job_Placement' in filtered_df.columns:
-        job_placement = f"{filtered_df['Job_Placement'].sum()/1000:.0f}K"
+        job_placement_sum = filtered_df['Job_Placement'].sum()
+        if job_placement_sum >= 1000:
+            job_placement = f"{job_placement_sum/1000:.0f}K"
+        else:
+            job_placement = f"{job_placement_sum:.0f}"
     else:
         job_placement = "21K"
     
     if 'Skilled_Visa' in filtered_df.columns:
-        skilled_visa_sum = filtered_df['Skilled_Visa'].sum()/1000
-        # Show decimal only if less than 10K and decimal is not .0
-        if skilled_visa_sum < 10 and skilled_visa_sum % 1 != 0:
-            skilled_visa = f"{skilled_visa_sum:.1f}K"
+        skilled_visa_sum = filtered_df['Skilled_Visa'].sum()
+        if skilled_visa_sum >= 1000:
+            # Show decimal only if less than 10K and decimal is not .0
+            if skilled_visa_sum/1000 < 10 and (skilled_visa_sum/1000) % 1 != 0:
+                skilled_visa = f"{skilled_visa_sum/1000:.1f}K"
+            else:
+                skilled_visa = f"{skilled_visa_sum/1000:.0f}K"
         else:
-            skilled_visa = f"{skilled_visa_sum:.0f}K"
+            skilled_visa = f"{skilled_visa_sum:.0f}"
     else:
         skilled_visa = "7.5K"
     
     if 'PR_Grant' in filtered_df.columns:
-        pr_grant = f"{filtered_df['PR_Grant'].sum()/1000:.0f}K"
+        pr_grant_sum = filtered_df['PR_Grant'].sum()
+        if pr_grant_sum >= 1000:
+            pr_grant = f"{pr_grant_sum/1000:.0f}K"
+        else:
+            pr_grant = f"{pr_grant_sum:.0f}"
     else:
         pr_grant = "7K"
     
@@ -545,25 +578,26 @@ def update_map(loc_all, loc_states, loc_states2, ind_all, ind1, ind2, ind3, ind4
                          hover_name='State',
                          hover_data={'Student_Count': True, 'lat': False, 'lon': False},
                          color='Student_Count',
-                         color_continuous_scale=['#FFA500', '#FF8C00', '#FF4500'],
+                         color_continuous_scale=['#a8d0f0', '#7db8e8', '#5a9bd5', '#4a90e2', '#2c3e50'],
                          size_max=50)
     
     fig.update_geos(
         showcountries=True,
         showcoastlines=True,
         showland=True,
-        landcolor='#FFE4B5',
+        landcolor='#f0f8ff',
+        coastlinecolor='#4a90e2',
         projection_type="mercator",
         lonaxis_range=[110, 160],
         lataxis_range=[-45, -10],
-        bgcolor='rgba(0,0,0,0)'
+        bgcolor='white'
     )
     
     fig.update_layout(
-        margin=dict(l=0, r=0, t=0, b=0),
+        margin=dict(l=0, r=0, t=10, b=10),
         paper_bgcolor='white',
         coloraxis_showscale=False,
-        height=500
+        height=420
     )
     
     return fig
@@ -613,7 +647,8 @@ def update_nationality(loc_all, loc_states, loc_states2, ind_all, ind1, ind2, in
         nationality_data = nationality_data.sort_values('Job_Achieved_Pct', ascending=True)
     else:
         nationality_data = pd.DataFrame({
-            'Nationality': ['Brazil', 'Thailand', 'Malaysia', 'Pakistan', 'South Korea', 'Indonesia', 'Nepal', 'Italy', 'China', 'India'],
+            'Nationality': ['Brazil', 'Thailand', 'Malaysia', 'Pakistan', 'South Korea', 
+                          'Indonesia', 'Nepal', 'Italy', 'China', 'India'],
             'Job_Achieved_Pct': [62, 62, 62, 63, 63, 63, 69, 69, 72, 75]
         })
     
@@ -622,17 +657,18 @@ def update_nationality(loc_all, loc_states, loc_states2, ind_all, ind1, ind2, in
                  y='Nationality',
                  orientation='h',
                  color='Job_Achieved_Pct',
-                 color_continuous_scale=['#6b3fa0', '#8b5cf6', '#a78bfa'],
+                 color_continuous_scale=['#2c3e50', '#4a90e2', '#5a9bd5', '#7db8e8'],
                  text='Job_Achieved_Pct')
     
-    fig.update_traces(texttemplate='%{text:.0f}', textposition='inside', textfont=dict(size=10))
+    fig.update_traces(texttemplate='%{text:.0f}', textposition='inside', textfont=dict(size=10, color='white'))
     fig.update_layout(
         xaxis_title='% of Job Achieved',
         yaxis_title='',
         showlegend=False,
-        margin=dict(l=10, r=10, t=5, b=25),
-        height=450,
+        margin=dict(l=10, r=10, t=10, b=25),
+        height=420,
         plot_bgcolor='white',
+        paper_bgcolor='white',
         xaxis=dict(gridcolor='lightgray', title_font=dict(size=10), range=[0, 100]),
         yaxis=dict(tickfont=dict(size=10)),
         coloraxis_showscale=False
@@ -745,14 +781,14 @@ def update_employment_rate(loc_all, loc_states, loc_states2, ind_all, ind1, ind2
                  names='Category',
                  hole=0.7,
                  color='Category',
-                 color_discrete_map={'Employed': '#6b3fa0', 'Unemployed': '#e0e0e0'})
+                 color_discrete_map={'Employed': '#4a90e2', 'Unemployed': '#e0e0e0'})
     
     fig.update_traces(textinfo='none', showlegend=False)
     
     fig.add_annotation(
         text=f'{emp_rate:.0f}%',
         x=0.5, y=0.5,
-        font=dict(size=28, color='#6b3fa0'),
+        font=dict(size=28, color='#4a90e2'),
         showarrow=False,
         xref='paper',
         yref='paper'
@@ -826,9 +862,9 @@ def update_gender_ratio(loc_all, loc_states, loc_states2, ind_all, ind1, ind2, i
                  values='Count', 
                  names='Gender',
                  color='Gender',
-                 color_discrete_map={'Male': '#6b3fa0', 'Female': '#c084fc', 'Others': '#e9d5ff'})
+                 color_discrete_map={'Male': '#2c3e50', 'Female': '#5a9bd5', 'Others': '#a8d0f0'})
     
-    fig.update_traces(textposition='inside', textinfo='label+percent', textfont=dict(size=9))
+    fig.update_traces(textposition='inside', textinfo='label+percent', textfont=dict(size=9, color='white'))
     fig.update_layout(
         margin=dict(l=10, r=10, t=5, b=5),
         showlegend=False,
@@ -896,12 +932,12 @@ def update_migration_reasons(loc_all, loc_states, loc_states2, ind_all, ind1, in
     fig = px.bar(x=male_data, 
                  y=reasons,
                  orientation='h',
-                 color_discrete_sequence=['#6b3fa0'])
+                 color_discrete_sequence=['#2c3e50'])
     
     fig.add_bar(x=female_data, 
                 y=reasons,
                 orientation='h',
-                marker=dict(color='#22d3ee'),
+                marker=dict(color='#7db8e8'),
                 showlegend=True,
                 name='Female')
     
