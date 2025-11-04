@@ -161,7 +161,7 @@ app.layout = html.Div([
                     html.Div([
                         dcc.Checklist(
                             id='location-filter',
-                            options=[{'label': 'ALL', 'value': 'ALL'}],
+                            options=[{'label': 'ALL', 'value': 'ALL', 'NT', 'ACT'}],
                             value=['ALL'],
                             labelStyle={'display': 'inline-block', 'marginRight': '8px', 'fontSize': '10px'},
                             className='custom-checkbox',
@@ -324,9 +324,9 @@ app.layout = html.Div([
                        style={'backgroundColor': '#2d5b8b', 'color': 'white', 'padding': '8px',
                               'margin': '0', 'fontSize': '12px', 'textAlign': 'center'}),
                 html.Div([
-                    dcc.Graph(id='australia-map', style={'height': '520px'}, config={'displayModeBar': False})
-                ], style={'backgroundColor': 'white', 'border': '1px solid #dee2e6', 'padding': '10px', 'height': '540px'})
-            ], className='shadow-sm rounded', style={'width': '49%', 'display': 'inline-block', 
+                    dcc.Graph(id='australia-map', style={'height': '560px'}, config={'displayModeBar': False})
+                ], style={'backgroundColor': 'white', 'border': '1px solid #dee2e6', 'padding': '10px', 'height': '560px'})
+            ], className='shadow-sm rounded', style={'width': '50%', 'display': 'inline-block', 
                      'verticalAlign': 'top', 'marginRight': '2%', 'backgroundColor': 'white', 'height': '580px'}),
             
             # Job Achievement
@@ -337,7 +337,7 @@ app.layout = html.Div([
                               'margin': '0', 'fontSize': '12px', 'textAlign': 'center'}),
                 html.Div([
                     dcc.Graph(id='nationality-chart', style={'height': '520px'}, config={'displayModeBar': False})
-                ], style={'backgroundColor': 'white', 'border': '1px solid #dee2e6', 'padding': '10px', 'height': '540px'})
+                ], style={'backgroundColor': 'white', 'border': '1px solid #dee2e6', 'padding': '10px', 'height': '560px'})
             ], className='shadow-sm rounded', style={'width': '49%', 'display': 'inline-block', 
                      'verticalAlign': 'top', 'backgroundColor': 'white', 'height': '580px'}),
             
@@ -358,7 +358,7 @@ app.layout = html.Div([
                     html.Div(id='mean-salary', style={'fontSize': '18px', 'fontWeight': 'bold', 'color': 'white'})
                 ], style={'width': '100%', 'backgroundColor': '#4a90e2',
                          'padding': '6px', 'textAlign': 'center', 'borderRadius': '4px'}),
-            ], className='shadow-sm rounded', style={'marginBottom': '8px', 'backgroundColor': 'white', 'padding': '6px'}),
+            ], className='shadow-sm rounded', style={'marginBottom': '6px', 'backgroundColor': 'white', 'padding': '6px'}),
             
             # Employment Rate and Gender Ratio
             html.Div([
@@ -367,7 +367,7 @@ app.layout = html.Div([
                            style={'backgroundColor': '#2d5b8b', 'color': 'white',
                            'padding': '6px', 'margin': '0', 'fontSize': '10px', 'textAlign': 'center'}),
                     html.Div([
-                        dcc.Graph(id='employment-rate', style={'height': '160px'}, config={'displayModeBar': False})
+                        dcc.Graph(id='employment-rate', style={'height': '120px'}, config={'displayModeBar': False})
                     ], style={'backgroundColor': 'white', 'border': '1px solid #dee2e6', 'padding': '5px'})
                 ], className='shadow-sm rounded', style={'width': '48%', 'display': 'inline-block', 
                          'verticalAlign': 'top', 'backgroundColor': 'white'}),
@@ -377,7 +377,7 @@ app.layout = html.Div([
                            style={'backgroundColor': '#2d5b8b', 'color': 'white',
                            'padding': '6px', 'margin': '0', 'fontSize': '10px', 'textAlign': 'center'}),
                     html.Div([
-                        dcc.Graph(id='gender-ratio', style={'height': '160px'}, config={'displayModeBar': False})
+                        dcc.Graph(id='gender-ratio', style={'height': '120px'}, config={'displayModeBar': False})
                     ], style={'backgroundColor': 'white', 'border': '1px solid #dee2e6', 'padding': '5px'})
                 ], className='shadow-sm rounded', style={'width': '48%', 'display': 'inline-block', 
                          'verticalAlign': 'top', 'marginLeft': '2%', 'backgroundColor': 'white'}),
@@ -397,7 +397,7 @@ app.layout = html.Div([
         ], style={'width': '29%', 'display': 'inline-block', 'verticalAlign': 'top', 'marginLeft': '1%'}),
     ], style={'marginTop': '10px'}),
     
-], style={'fontFamily': 'Arial, sans-serif', 'backgroundColor': '#ffffff', 'margin': '0', 'padding': '0', 'height': '100vh', 'overflowY': 'auto'})
+], style={'fontFamily': 'Arial, sans-serif', 'backgroundColor': '#ffffff', 'margin': '0', 'padding': '0', 'height': '90vh', 'overflowY': 'auto'})
 
 
 # Helper function to combine filter values
