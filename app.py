@@ -94,7 +94,7 @@ app.index_string = '''
 '''
 
 # Load data from CSV
-df = pd.read_csv('/mnt/project/international_students_data.csv')
+df = pd.read_csv('/mnt/project/international students data.csv')
 
 # Extract unique values for filters
 states = df['State'].unique() if 'State' in df.columns else ['NSW', 'VIC', 'QLD', 'WA', 'SA', 'TAS', 'ACT', 'NT']
