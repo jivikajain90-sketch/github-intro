@@ -161,7 +161,7 @@ app.layout = html.Div([
                     html.Div([
                         dcc.Checklist(
                             id='location-filter',
-                            options=[{'label': 'ALL', 'value': 'ALL', 'NT', 'ACT'}],
+                            options=[{'label': 'ALL', 'value': 'ALL'}],
                             value=['ALL'],
                             labelStyle={'display': 'inline-block', 'marginRight': '8px', 'fontSize': '10px'},
                             className='custom-checkbox',
@@ -169,7 +169,7 @@ app.layout = html.Div([
                         ),
                         dcc.Checklist(
                             id='location-states',
-                            options=[{'label': state, 'value': state} for state in ['TAS', 'VIC', 'NSW']],
+                            options=[{'label': state, 'value': state} for state in ['TAS', 'VIC', 'NSW', 'NT']],
                             value=[],
                             labelStyle={'display': 'inline-block', 'marginRight': '8px', 'fontSize': '10px'},
                             className='custom-checkbox',
@@ -179,7 +179,7 @@ app.layout = html.Div([
                     html.Div([
                         dcc.Checklist(
                             id='location-states2',
-                            options=[{'label': state, 'value': state} for state in ['SA', 'WA', 'QLD']],
+                            options=[{'label': state, 'value': state} for state in ['SA', 'WA', 'QLD', 'ACT']],
                             value=[],
                             labelStyle={'display': 'inline-block', 'marginRight': '8px', 'fontSize': '10px'},
                             className='custom-checkbox'
