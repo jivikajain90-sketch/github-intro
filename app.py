@@ -71,9 +71,12 @@ app.index_string = '''
             .filter-group {
                 background-color: white;
                 padding: 8px;
-                border-radius: 2px;
+                border-radius: 0px;
                 margin-bottom: 8px;
-                border: 1px solid #ccc;
+                border-top: 2px solid #000;
+                border-bottom: 2px solid #000;
+                border-left: 1px solid #ccc;
+                border-right: 1px solid #ccc;
             }
             
             /* Box styling */
@@ -88,6 +91,26 @@ app.index_string = '''
                 text-align: center !important;
                 padding: 8px !important;
                 margin: 0 !important;
+            }
+            
+            /* Source box styling */
+            .source-box {
+                background-color: white;
+                border: 2px solid #000;
+                padding: 8px;
+                text-align: center;
+                font-size: 9px;
+                line-height: 1.4;
+            }
+            
+            .source-box a {
+                color: #002E79;
+                text-decoration: none;
+                font-weight: 600;
+            }
+            
+            .source-box a:hover {
+                text-decoration: underline;
             }
         </style>
     </head>
@@ -302,6 +325,14 @@ app.layout = html.Div([
                 ),
             ], className='filter-group'),
             
+            # Source Box
+            html.Div([
+                html.Div('Source: Graduate Outcomes Survey (2024)', style={'marginBottom': '3px', 'fontWeight': '600', 'color': '#333'}),
+                html.A('Link for in-depth report', 
+                       href='https://qilt.edu.au/docs/default-source/default-document-library/2024-gos-international-report.pdf?sfvrsn=168c5da_1',
+                       target='_blank')
+            ], className='source-box', style={'marginTop': '10px'}),
+            
         ], className='sidebar-filters', style={'width': '13%', 'display': 'inline-block', 'verticalAlign': 'top',
                   'padding': '8px', 'height': '610px', 'overflowY': 'auto'}),
         
@@ -314,9 +345,17 @@ app.layout = html.Div([
                        style={'backgroundColor': '#5288E0', 'color': 'white', 
                               'fontSize': '11px', 'fontWeight': '600'}),
                 html.Div([
-                    dcc.Graph(id='australia-map', style={'height': '580px'}, config={'displayModeBar': False})
-                ], style={'padding': '2px', 'height': '580px'})
-            ], className='chart-box', style={'height': '590px', 'marginBottom': '2px'}),
+                    dcc.Graph(id='australia-map', style={'height': '530px'}, config={'displayModeBar': False})
+                ], style={'padding': '0px', 'height': '530px'})
+            ], className='chart-box', style={'height': '555px', 'marginBottom': '5px'}),
+            
+            # Source Box
+            html.Div([
+                html.Div('Source: Graduate Outcomes Survey (2024)', style={'marginBottom': '3px', 'fontWeight': '600', 'color': '#333'}),
+                html.A('Link for in-depth report', 
+                       href='https://qilt.edu.au/docs/default-source/default-document-library/2024-gos-international-report.pdf?sfvrsn=168c5da_1',
+                       target='_blank')
+            ], className='source-box'),
             
         ], style={'width': '36%', 'display': 'inline-block', 'verticalAlign': 'top', 'paddingLeft': '5px'}),
         
@@ -327,10 +366,10 @@ app.layout = html.Div([
                    style={'backgroundColor': '#5288E0', 'color': 'white',
                           'fontSize': '11px', 'fontWeight': '600'}),
             html.Div([
-                dcc.Graph(id='nationality-chart', style={'height': '560px'}, config={'displayModeBar': False})
-            ], style={'padding': '2px', 'height': '560px'})
+                dcc.Graph(id='nationality-chart', style={'height': '530px'}, config={'displayModeBar': False})
+            ], style={'padding': '0px', 'height': '530px'})
         ], className='chart-box', style={'width': '23%', 'display': 'inline-block', 
-                 'verticalAlign': 'top', 'marginLeft': '2px', 'height': '590px'}),
+                 'verticalAlign': 'top', 'marginLeft': '5px', 'height': '590px'}),
         
         # Right Section - Salary and Demographics
         html.Div([
@@ -513,7 +552,7 @@ def update_kpis(loc_all, ind_all, ind1, ind2, ind3, ind4,
     return visa_apps, post_study, job_placement, skilled_visa, pr_grant
 
 
-# Callback for Australia map - Using wireframe colors
+# Callback for Australia map
 @app.callback(
     Output('australia-map', 'figure'),
     [Input('location-filter', 'value'),
@@ -566,7 +605,6 @@ def update_map(loc_all, ind_all, ind1, ind2, ind3, ind4,
     state_data['lat'] = state_data['State'].map(lambda x: state_coords.get(x, (0, 0))[0])
     state_data['lon'] = state_data['State'].map(lambda x: state_coords.get(x, (0, 0))[1])
     
-    # Using wireframe colors: #FFC977, #F8BD3C, #E9631D, #D53223
     fig = px.scatter_geo(state_data,
                          lat='lat',
                          lon='lon',
@@ -590,16 +628,16 @@ def update_map(loc_all, ind_all, ind1, ind2, ind3, ind4,
     )
     
     fig.update_layout(
-        margin=dict(l=0, r=0, t=5, b=0),
+        margin=dict(l=0, r=0, t=0, b=0),
         paper_bgcolor='white',
         coloraxis_showscale=False,
-        height=580
+        height=530
     )
     
     return fig
 
 
-# Callback for nationality chart - Using wireframe colors
+# Callback for nationality chart
 @app.callback(
     Output('nationality-chart', 'figure'),
     [Input('location-filter', 'value'),
@@ -646,7 +684,6 @@ def update_nationality(loc_all, ind_all, ind1, ind2, ind3, ind4,
             'Job_Achieved_Pct': [62, 62, 62, 63, 63, 63, 69, 69, 72, 75]
         })
     
-    # Using wireframe colors: #002E79, #5288E0, #9BC1FF
     fig = px.bar(nationality_data, 
                  x='Job_Achieved_Pct', 
                  y='Nationality',
@@ -661,8 +698,8 @@ def update_nationality(loc_all, ind_all, ind1, ind2, ind3, ind4,
         xaxis_title='% of Job Achieved',
         yaxis_title='',
         showlegend=False,
-        margin=dict(l=5, r=5, t=5, b=25),
-        height=560,
+        margin=dict(l=5, r=5, t=0, b=20),
+        height=530,
         plot_bgcolor='white',
         paper_bgcolor='white',
         xaxis=dict(gridcolor='lightgray', title_font=dict(size=10), range=[0, 100], tickfont=dict(size=9)),
@@ -722,7 +759,7 @@ def update_salary(loc_all, ind_all, ind1, ind2, ind3, ind4,
     return median_sal_str, mean_sal_str
 
 
-# Callback for employment rate - Using wireframe colors
+# Callback for employment rate
 @app.callback(
     Output('employment-rate', 'figure'),
     [Input('location-filter', 'value'),
@@ -795,7 +832,7 @@ def update_employment_rate(loc_all, ind_all, ind1, ind2, ind3, ind4,
     return fig
 
 
-# Callback for gender ratio - Using wireframe colors
+# Callback for gender ratio
 @app.callback(
     Output('gender-ratio', 'figure'),
     [Input('location-filter', 'value'),
@@ -847,7 +884,7 @@ def update_gender_ratio(loc_all, ind_all, ind1, ind2, ind3, ind4,
                  values='Count', 
                  names='Gender',
                  color='Gender',
-                 color_discrete_map={'Male': '#9BC1FF', 'Female': '#002E79', 'Others': '#5288E0'})
+                 color_discrete_map={'Male': '#002E79', 'Female': '#9BC1FF', 'Others': '#5288E0'})
     
     fig.update_traces(textposition='inside', textinfo='label+percent', 
                      textfont=dict(size=10, color='white', weight='bold'))
@@ -861,7 +898,7 @@ def update_gender_ratio(loc_all, ind_all, ind1, ind2, ind3, ind4,
     return fig
 
 
-# Callback for migration reasons - Using wireframe colors
+# Callback for migration reasons
 @app.callback(
     Output('migration-reasons', 'figure'),
     [Input('location-filter', 'value'),
