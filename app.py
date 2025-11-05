@@ -178,23 +178,12 @@ app.layout = html.Div([
                         ),
                         dcc.Checklist(
                             id='location-states',
-                            options=[{'label': state, 'value': state} for state in ['TAS', 'VIC', 'NSW', 'NT']],
+                            options=[{'label': state, 'value': state} for state in ['TAS', 'VIC', 'NSW', 'NT', 'SA', 'WA', 'QLD', 'ACT']],
                             value=[],
                             labelStyle={'display': 'inline-block', 'marginRight': '8px', 'fontSize': '10px'},
                             className='custom-checkbox',
                             style={'marginBottom': '2px'}
                         ),
-                    ]),
-                    html.Div([
-                        dcc.Checklist(
-                            id='location-states2',
-                            options=[{'label': state, 'value': state} for state in ['SA', 'WA', 'QLD', 'ACT']],
-                            value=[],
-                            labelStyle={'display': 'inline-block', 'marginRight': '8px', 'fontSize': '10px'},
-                            className='custom-checkbox'
-                        ),
-                    ]),
-                ]),
             ], className='filter-group'),
             
             # Industries Filter
@@ -462,10 +451,10 @@ def filter_data(locations, industries_filter, study_levels, employment_types, ye
      Input('employment-filter', 'value'),
      Input('employment-filter2', 'value'),
      Input('year-filter', 'value')])
-def update_kpis(loc_all, loc_states, loc_states2, ind_all, ind1, ind2, ind3, ind4, 
+def update_kpis(loc_all, loc_states, ind_all, ind1, ind2, ind3, ind4, 
                 study1, study2, study3, emp1, emp2, years_filter):
     
-    locations = combine_filters([loc_all, loc_states, loc_states2])
+    locations = combine_filters([loc_all, loc_states])
     if not locations or 'ALL' in loc_all:
         locations = ['ALL']
     
@@ -551,10 +540,10 @@ def update_kpis(loc_all, loc_states, loc_states2, ind_all, ind1, ind2, ind3, ind
      Input('employment-filter', 'value'),
      Input('employment-filter2', 'value'),
      Input('year-filter', 'value')])
-def update_map(loc_all, loc_states, loc_states2, ind_all, ind1, ind2, ind3, ind4, 
+def update_map(loc_all, loc_states, ind_all, ind1, ind2, ind3, ind4, 
                study1, study2, study3, emp1, emp2, years_filter):
     
-    locations = combine_filters([loc_all, loc_states, loc_states2])
+    locations = combine_filters([loc_all, loc_states])
     if not locations or 'ALL' in loc_all:
         locations = ['ALL']
     
@@ -638,10 +627,10 @@ def update_map(loc_all, loc_states, loc_states2, ind_all, ind1, ind2, ind3, ind4
      Input('employment-filter', 'value'),
      Input('employment-filter2', 'value'),
      Input('year-filter', 'value')])
-def update_nationality(loc_all, loc_states, loc_states2, ind_all, ind1, ind2, ind3, ind4, 
+def update_nationality(loc_all, loc_states, ind_all, ind1, ind2, ind3, ind4, 
                        study1, study2, study3, emp1, emp2, years_filter):
     
-    locations = combine_filters([loc_all, loc_states, loc_states2])
+    locations = combine_filters([loc_all, loc_states])
     if not locations or 'ALL' in loc_all:
         locations = ['ALL']
     
@@ -713,10 +702,10 @@ def update_nationality(loc_all, loc_states, loc_states2, ind_all, ind1, ind2, in
      Input('employment-filter', 'value'),
      Input('employment-filter2', 'value'),
      Input('year-filter', 'value')])
-def update_salary(loc_all, loc_states, loc_states2, ind_all, ind1, ind2, ind3, ind4, 
+def update_salary(loc_all, loc_states, ind_all, ind1, ind2, ind3, ind4, 
                   study1, study2, study3, emp1, emp2, years_filter):
     
-    locations = combine_filters([loc_all, loc_states, loc_states2])
+    locations = combine_filters([loc_all, loc_states])
     if not locations or 'ALL' in loc_all:
         locations = ['ALL']
     
@@ -763,10 +752,10 @@ def update_salary(loc_all, loc_states, loc_states2, ind_all, ind1, ind2, ind3, i
      Input('employment-filter', 'value'),
      Input('employment-filter2', 'value'),
      Input('year-filter', 'value')])
-def update_employment_rate(loc_all, loc_states, loc_states2, ind_all, ind1, ind2, ind3, ind4, 
+def update_employment_rate(loc_all, loc_states, ind_all, ind1, ind2, ind3, ind4, 
                            study1, study2, study3, emp1, emp2, years_filter):
     
-    locations = combine_filters([loc_all, loc_states, loc_states2])
+    locations = combine_filters([loc_all, loc_states])
     if not locations or 'ALL' in loc_all:
         locations = ['ALL']
     
@@ -838,10 +827,10 @@ def update_employment_rate(loc_all, loc_states, loc_states2, ind_all, ind1, ind2
      Input('employment-filter', 'value'),
      Input('employment-filter2', 'value'),
      Input('year-filter', 'value')])
-def update_gender_ratio(loc_all, loc_states, loc_states2, ind_all, ind1, ind2, ind3, ind4, 
+def update_gender_ratio(loc_all, loc_states, ind_all, ind1, ind2, ind3, ind4, 
                         study1, study2, study3, emp1, emp2, years_filter):
     
-    locations = combine_filters([loc_all, loc_states, loc_states2])
+    locations = combine_filters([loc_all, loc_states])
     if not locations or 'ALL' in loc_all:
         locations = ['ALL']
     
@@ -906,10 +895,10 @@ def update_gender_ratio(loc_all, loc_states, loc_states2, ind_all, ind1, ind2, i
      Input('employment-filter', 'value'),
      Input('employment-filter2', 'value'),
      Input('year-filter', 'value')])
-def update_migration_reasons(loc_all, loc_states, loc_states2, ind_all, ind1, ind2, ind3, ind4, 
+def update_migration_reasons(loc_all, loc_states, ind_all, ind1, ind2, ind3, ind4, 
                              study1, study2, study3, emp1, emp2, years_filter):
     
-    locations = combine_filters([loc_all, loc_states, loc_states2])
+    locations = combine_filters([loc_all, loc_states])
     if not locations or 'ALL' in loc_all:
         locations = ['ALL']
     
