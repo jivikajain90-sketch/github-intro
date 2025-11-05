@@ -29,7 +29,7 @@ app.index_string = '''
                 width: 14px;
                 height: 14px;
                 margin-right: 4px;
-                accent-color: #1e3a5f;
+                accent-color: #002E79;
                 cursor: pointer;
             }
             
@@ -41,12 +41,12 @@ app.index_string = '''
             }
             
             .custom-checkbox label:hover {
-                color: #1e3a5f;
+                color: #002E79;
             }
             
             /* Checked state styling */
             .custom-checkbox input[type="checkbox"]:checked + label {
-                color: #1e3a5f;
+                color: #002E79;
                 font-weight: 600;
             }
             
@@ -64,7 +64,7 @@ app.index_string = '''
             /* Sidebar styling */
             .sidebar-filters {
                 background-color: #f5f5f5;
-                border-right: 1px solid #ccc;
+                border-right: 2px solid #000;
             }
             
             /* Checkbox container styling */
@@ -79,7 +79,7 @@ app.index_string = '''
             /* Box styling */
             .chart-box {
                 background-color: white;
-                border: 1px solid #000;
+                border: 2px solid #000;
                 padding: 0;
                 height: 100%;
             }
@@ -116,13 +116,13 @@ app.layout = html.Div([
     html.Div([
         html.H1('INTERNATIONAL STUDENT EMPLOYABILITY DASHBOARD - AUSTRALIA',
                 style={'textAlign': 'center', 'color': 'white', 'margin': '0', 'padding': '12px',
-                       'backgroundColor': '#1e3a5f', 'fontSize': '22px', 'fontWeight': '700'})
+                       'backgroundColor': '#002E79', 'fontSize': '22px', 'fontWeight': '700'})
     ]),
     
     # Visa Funnel Section
     html.Div([
         html.H2('OVERALL VISA FUNNEL - BREAKDOWN',
-                style={'textAlign': 'center', 'backgroundColor': '#6ba3d8', 'color': 'white',
+                style={'textAlign': 'center', 'backgroundColor': '#5288E0', 'color': 'white',
                        'margin': '0', 'padding': '8px', 'fontSize': '15px', 'fontWeight': '600'})
     ]),
     
@@ -130,33 +130,33 @@ app.layout = html.Div([
     html.Div([
         html.Div([
             html.Div('STUDENT VISA APPLICATIONS', style={'fontSize': '9px', 'marginBottom': '2px', 'color': '#666', 'fontWeight': '600'}),
-            html.Div(id='kpi-visa-apps', style={'fontSize': '26px', 'fontWeight': 'bold', 'color': '#1e3a5f'})
+            html.Div(id='kpi-visa-apps', style={'fontSize': '26px', 'fontWeight': 'bold', 'color': '#002E79'})
         ], style={'width': '19%', 'display': 'inline-block', 'textAlign': 'center', 
-                  'padding': '8px', 'margin': '2px', 'backgroundColor': 'white', 'border': '1px solid #000'}),
+                  'padding': '8px', 'margin': '2px', 'backgroundColor': 'white', 'border': '2px solid #000'}),
         
         html.Div([
             html.Div('POST-STUDY WORK', style={'fontSize': '9px', 'marginBottom': '2px', 'color': '#666', 'fontWeight': '600'}),
-            html.Div(id='kpi-post-study', style={'fontSize': '26px', 'fontWeight': 'bold', 'color': '#1e3a5f'})
+            html.Div(id='kpi-post-study', style={'fontSize': '26px', 'fontWeight': 'bold', 'color': '#002E79'})
         ], style={'width': '19%', 'display': 'inline-block', 'textAlign': 'center',
-                  'padding': '8px', 'margin': '2px', 'backgroundColor': 'white', 'border': '1px solid #000'}),
+                  'padding': '8px', 'margin': '2px', 'backgroundColor': 'white', 'border': '2px solid #000'}),
         
         html.Div([
             html.Div('JOB PLACEMENT', style={'fontSize': '9px', 'marginBottom': '2px', 'color': '#666', 'fontWeight': '600'}),
-            html.Div(id='kpi-job-placement', style={'fontSize': '26px', 'fontWeight': 'bold', 'color': '#1e3a5f'})
+            html.Div(id='kpi-job-placement', style={'fontSize': '26px', 'fontWeight': 'bold', 'color': '#002E79'})
         ], style={'width': '19%', 'display': 'inline-block', 'textAlign': 'center',
-                  'padding': '8px', 'margin': '2px', 'backgroundColor': 'white', 'border': '1px solid #000'}),
+                  'padding': '8px', 'margin': '2px', 'backgroundColor': 'white', 'border': '2px solid #000'}),
         
         html.Div([
             html.Div('SKILLED VISA APPLICATIONS', style={'fontSize': '9px', 'marginBottom': '2px', 'color': '#666', 'fontWeight': '600'}),
-            html.Div(id='kpi-skilled-visa', style={'fontSize': '26px', 'fontWeight': 'bold', 'color': '#1e3a5f'})
+            html.Div(id='kpi-skilled-visa', style={'fontSize': '26px', 'fontWeight': 'bold', 'color': '#002E79'})
         ], style={'width': '19%', 'display': 'inline-block', 'textAlign': 'center',
-                  'padding': '8px', 'margin': '2px', 'backgroundColor': 'white', 'border': '1px solid #000'}),
+                  'padding': '8px', 'margin': '2px', 'backgroundColor': 'white', 'border': '2px solid #000'}),
         
         html.Div([
             html.Div('PR GRANT', style={'fontSize': '9px', 'marginBottom': '2px', 'color': '#666', 'fontWeight': '600'}),
-            html.Div(id='kpi-pr-grant', style={'fontSize': '26px', 'fontWeight': 'bold', 'color': '#1e3a5f'})
+            html.Div(id='kpi-pr-grant', style={'fontSize': '26px', 'fontWeight': 'bold', 'color': '#002E79'})
         ], style={'width': '19%', 'display': 'inline-block', 'textAlign': 'center',
-                  'padding': '8px', 'margin': '2px', 'backgroundColor': 'white', 'border': '1px solid #000'}),
+                  'padding': '8px', 'margin': '2px', 'backgroundColor': 'white', 'border': '2px solid #000'}),
     ], style={'textAlign': 'center', 'marginBottom': '5px', 'marginTop': '3px'}),
     
     # Main Content Row
@@ -167,23 +167,15 @@ app.layout = html.Div([
             html.Div([
                 html.H4('LOCATION', className='filter-header'),
                 html.Div([
-                    html.Div([
-                        dcc.Checklist(
-                            id='location-filter',
-                            options=[{'label': 'ALL', 'value': 'ALL'}],
-                            value=['ALL'],
-                            labelStyle={'display': 'inline-block', 'marginRight': '8px', 'fontSize': '10px'},
-                            className='custom-checkbox',
-                            style={'marginBottom': '2px'}
-                        ),
-                        dcc.Checklist(
-                            id='location-states',
-                            options=[{'label': state, 'value': state} for state in ['TAS', 'VIC', 'NSW', 'NT', 'SA', 'WA', 'QLD', 'ACT']],
-                            value=[],
-                            labelStyle={'display': 'inline-block', 'marginRight': '8px', 'fontSize': '10px'},
-                            className='custom-checkbox',
-                            style={'marginBottom': '2px'}
-                        ),
+                    dcc.Checklist(
+                        id='location-filter',
+                        options=[{'label': 'ALL', 'value': 'ALL'}] + 
+                                [{'label': state, 'value': state} for state in ['TAS', 'VIC', 'NSW', 'NT', 'SA', 'WA', 'QLD', 'ACT']],
+                        value=['ALL'],
+                        labelStyle={'display': 'inline-block', 'marginRight': '8px', 'fontSize': '10px'},
+                        className='custom-checkbox'
+                    ),
+                ]),
             ], className='filter-group'),
             
             # Industries Filter
@@ -310,35 +302,35 @@ app.layout = html.Div([
                 ),
             ], className='filter-group'),
             
-        ], className='sidebar-filters', style={'width': '12%', 'display': 'inline-block', 'verticalAlign': 'top',
+        ], className='sidebar-filters', style={'width': '13%', 'display': 'inline-block', 'verticalAlign': 'top',
                   'padding': '8px', 'height': '610px', 'overflowY': 'auto'}),
         
-        # Middle Section - Maps and Charts
+        # Middle Section - Maps
         html.Div([
             # Regional Split
             html.Div([
                 html.H3('REGIONAL SPLIT - NO. OF INTL. STUDENTS',
                        className='box-header',
-                       style={'backgroundColor': '#6ba3d8', 'color': 'white', 
+                       style={'backgroundColor': '#5288E0', 'color': 'white', 
                               'fontSize': '11px', 'fontWeight': '600'}),
                 html.Div([
-                    dcc.Graph(id='australia-map', style={'height': '570px'}, config={'displayModeBar': False})
-                ], style={'padding': '5px', 'height': '570px'})
-            ], className='chart-box', style={'height': '580px', 'marginBottom': '5px'}),
+                    dcc.Graph(id='australia-map', style={'height': '560px'}, config={'displayModeBar': False})
+                ], style={'padding': '3px', 'height': '560px'})
+            ], className='chart-box', style={'height': '590px', 'marginBottom': '5px'}),
             
-        ], style={'width': '38%', 'display': 'inline-block', 'verticalAlign': 'top', 'paddingLeft': '5px'}),
+        ], style={'width': '36%', 'display': 'inline-block', 'verticalAlign': 'top', 'paddingLeft': '5px'}),
         
         # Middle-Right Section - Nationality
         html.Div([
             html.H3('JOB ACHIEVED - NATIONALITY SPLIT (TOP 10)',
                    className='box-header',
-                   style={'backgroundColor': '#6ba3d8', 'color': 'white',
+                   style={'backgroundColor': '#5288E0', 'color': 'white',
                           'fontSize': '11px', 'fontWeight': '600'}),
             html.Div([
-                dcc.Graph(id='nationality-chart', style={'height': '570px'}, config={'displayModeBar': False})
-            ], style={'padding': '5px', 'height': '570px'})
-        ], className='chart-box', style={'width': '25%', 'display': 'inline-block', 
-                 'verticalAlign': 'top', 'marginLeft': '5px', 'height': '580px'}),
+                dcc.Graph(id='nationality-chart', style={'height': '560px'}, config={'displayModeBar': False})
+            ], style={'padding': '3px', 'height': '560px'})
+        ], className='chart-box', style={'width': '23%', 'display': 'inline-block', 
+                 'verticalAlign': 'top', 'marginLeft': '5px', 'height': '590px'}),
         
         # Right Section - Salary and Demographics
         html.Div([
@@ -347,51 +339,51 @@ app.layout = html.Div([
                 html.Div([
                     html.Div('Median Salary', style={'fontSize': '9px', 'color': 'white', 'marginBottom': '2px', 'fontWeight': '600'}),
                     html.Div(id='median-salary', style={'fontSize': '16px', 'fontWeight': 'bold', 'color': 'white'})
-                ], style={'width': '100%', 'backgroundColor': '#1e3a5f',
+                ], style={'width': '100%', 'backgroundColor': '#002E79',
                          'padding': '5px', 'textAlign': 'center', 'marginBottom': '3px'}),
                 
                 html.Div([
                     html.Div('Mean Salary', style={'fontSize': '9px', 'color': 'white', 'marginBottom': '2px', 'fontWeight': '600'}),
                     html.Div(id='mean-salary', style={'fontSize': '16px', 'fontWeight': 'bold', 'color': 'white'})
-                ], style={'width': '100%', 'backgroundColor': '#6ba3d8',
+                ], style={'width': '100%', 'backgroundColor': '#5288E0',
                          'padding': '5px', 'textAlign': 'center'}),
-            ], style={'marginBottom': '4px', 'border': '1px solid #000'}),
+            ], style={'marginBottom': '4px', 'border': '2px solid #000'}),
             
             # Employment Rate and Gender Ratio
             html.Div([
                 html.Div([
                     html.H3('EMPLOYMENT RATE', className='box-header', 
-                           style={'backgroundColor': '#6ba3d8', 'color': 'white',
+                           style={'backgroundColor': '#5288E0', 'color': 'white',
                            'padding': '5px', 'margin': '0', 'fontSize': '10px', 'fontWeight': '600'}),
                     html.Div([
-                        dcc.Graph(id='employment-rate', style={'height': '135px'}, config={'displayModeBar': False})
+                        dcc.Graph(id='employment-rate', style={'height': '140px'}, config={'displayModeBar': False})
                     ], style={'padding': '3px'})
-                ], className='chart-box', style={'width': '48.5%', 'display': 'inline-block', 
+                ], className='chart-box', style={'width': '48%', 'display': 'inline-block', 
                          'verticalAlign': 'top'}),
                 
                 html.Div([
                     html.H3('GENDER RATIO', className='box-header',
-                           style={'backgroundColor': '#6ba3d8', 'color': 'white',
+                           style={'backgroundColor': '#5288E0', 'color': 'white',
                            'padding': '5px', 'margin': '0', 'fontSize': '10px', 'fontWeight': '600'}),
                     html.Div([
-                        dcc.Graph(id='gender-ratio', style={'height': '135px'}, config={'displayModeBar': False})
+                        dcc.Graph(id='gender-ratio', style={'height': '140px'}, config={'displayModeBar': False})
                     ], style={'padding': '3px'})
-                ], className='chart-box', style={'width': '48.5%', 'display': 'inline-block', 
-                         'verticalAlign': 'top', 'marginLeft': '3%'}),
+                ], className='chart-box', style={'width': '48%', 'display': 'inline-block', 
+                         'verticalAlign': 'top', 'marginLeft': '4%'}),
             ], style={'marginBottom': '4px'}),
             
             # Migration Reasons
             html.Div([
                 html.H3('GRADUATES LEAVING AUSTRALIA%',
                        className='box-header',
-                       style={'backgroundColor': '#6ba3d8', 'color': 'white', 'padding': '5px',
+                       style={'backgroundColor': '#5288E0', 'color': 'white', 'padding': '5px',
                               'margin': '0', 'fontSize': '10px', 'fontWeight': '600'}),
                 html.Div([
-                    dcc.Graph(id='migration-reasons', style={'height': '315px'}, config={'displayModeBar': False})
-                ], style={'padding': '5px'})
+                    dcc.Graph(id='migration-reasons', style={'height': '340px'}, config={'displayModeBar': False})
+                ], style={'padding': '3px'})
             ], className='chart-box'),
             
-        ], style={'width': '25%', 'display': 'inline-block', 'verticalAlign': 'top', 'marginLeft': '5px'}),
+        ], style={'width': '27%', 'display': 'inline-block', 'verticalAlign': 'top', 'marginLeft': '5px'}),
     ], style={'marginTop': '5px'}),
     
 ], style={'fontFamily': 'Arial, sans-serif', 'backgroundColor': '#ffffff', 'margin': '0', 'padding': '0', 'height': '100vh', 'overflow': 'hidden'})
@@ -438,8 +430,6 @@ def filter_data(locations, industries_filter, study_levels, employment_types, ye
      Output('kpi-skilled-visa', 'children'),
      Output('kpi-pr-grant', 'children')],
     [Input('location-filter', 'value'),
-     Input('location-states', 'value'),
-     Input('location-states2', 'value'),
      Input('industry-filter-all', 'value'),
      Input('industry-filter1', 'value'),
      Input('industry-filter2', 'value'),
@@ -451,11 +441,11 @@ def filter_data(locations, industries_filter, study_levels, employment_types, ye
      Input('employment-filter', 'value'),
      Input('employment-filter2', 'value'),
      Input('year-filter', 'value')])
-def update_kpis(loc_all, loc_states, ind_all, ind1, ind2, ind3, ind4, 
+def update_kpis(loc_all, ind_all, ind1, ind2, ind3, ind4, 
                 study1, study2, study3, emp1, emp2, years_filter):
     
-    locations = combine_filters([loc_all, loc_states])
-    if not locations or 'ALL' in loc_all:
+    locations = loc_all if loc_all else ['ALL']
+    if not locations or 'ALL' in locations:
         locations = ['ALL']
     
     industries_filter = combine_filters([ind_all, ind1, ind2, ind3, ind4])
@@ -523,12 +513,10 @@ def update_kpis(loc_all, loc_states, ind_all, ind1, ind2, ind3, ind4,
     return visa_apps, post_study, job_placement, skilled_visa, pr_grant
 
 
-# Callback for Australia map - Orange-Red gradient matching wireframe
+# Callback for Australia map - Using wireframe colors
 @app.callback(
     Output('australia-map', 'figure'),
     [Input('location-filter', 'value'),
-     Input('location-states', 'value'),
-     Input('location-states2', 'value'),
      Input('industry-filter-all', 'value'),
      Input('industry-filter1', 'value'),
      Input('industry-filter2', 'value'),
@@ -540,11 +528,11 @@ def update_kpis(loc_all, loc_states, ind_all, ind1, ind2, ind3, ind4,
      Input('employment-filter', 'value'),
      Input('employment-filter2', 'value'),
      Input('year-filter', 'value')])
-def update_map(loc_all, loc_states, ind_all, ind1, ind2, ind3, ind4, 
+def update_map(loc_all, ind_all, ind1, ind2, ind3, ind4, 
                study1, study2, study3, emp1, emp2, years_filter):
     
-    locations = combine_filters([loc_all, loc_states])
-    if not locations or 'ALL' in loc_all:
+    locations = loc_all if loc_all else ['ALL']
+    if not locations or 'ALL' in locations:
         locations = ['ALL']
     
     industries_filter = combine_filters([ind_all, ind1, ind2, ind3, ind4])
@@ -578,6 +566,7 @@ def update_map(loc_all, loc_states, ind_all, ind1, ind2, ind3, ind4,
     state_data['lat'] = state_data['State'].map(lambda x: state_coords.get(x, (0, 0))[0])
     state_data['lon'] = state_data['State'].map(lambda x: state_coords.get(x, (0, 0))[1])
     
+    # Using wireframe colors: #FFC977, #F8BD3C, #E9631D, #D53223
     fig = px.scatter_geo(state_data,
                          lat='lat',
                          lon='lon',
@@ -585,15 +574,15 @@ def update_map(loc_all, loc_states, ind_all, ind1, ind2, ind3, ind4,
                          hover_name='State',
                          hover_data={'Student_Count': True, 'lat': False, 'lon': False},
                          color='Student_Count',
-                         color_continuous_scale=['#ffeb99', '#ffcc66', '#ff9933', '#ff6600', '#cc3300'],
-                         size_max=55)
+                         color_continuous_scale=['#FFC977', '#F8BD3C', '#E9631D', '#D53223'],
+                         size_max=60)
     
     fig.update_geos(
         showcountries=True,
         showcoastlines=True,
         showland=True,
-        landcolor='#fffacd',
-        coastlinecolor='#999',
+        landcolor='#FFF8E7',
+        coastlinecolor='#666',
         projection_type="mercator",
         lonaxis_range=[110, 160],
         lataxis_range=[-45, -10],
@@ -604,18 +593,16 @@ def update_map(loc_all, loc_states, ind_all, ind1, ind2, ind3, ind4,
         margin=dict(l=0, r=0, t=5, b=0),
         paper_bgcolor='white',
         coloraxis_showscale=False,
-        height=545
+        height=560
     )
     
     return fig
 
 
-# Callback for nationality chart - Keep navy blue as specified
+# Callback for nationality chart - Using wireframe colors
 @app.callback(
     Output('nationality-chart', 'figure'),
     [Input('location-filter', 'value'),
-     Input('location-states', 'value'),
-     Input('location-states2', 'value'),
      Input('industry-filter-all', 'value'),
      Input('industry-filter1', 'value'),
      Input('industry-filter2', 'value'),
@@ -627,11 +614,11 @@ def update_map(loc_all, loc_states, ind_all, ind1, ind2, ind3, ind4,
      Input('employment-filter', 'value'),
      Input('employment-filter2', 'value'),
      Input('year-filter', 'value')])
-def update_nationality(loc_all, loc_states, ind_all, ind1, ind2, ind3, ind4, 
+def update_nationality(loc_all, ind_all, ind1, ind2, ind3, ind4, 
                        study1, study2, study3, emp1, emp2, years_filter):
     
-    locations = combine_filters([loc_all, loc_states])
-    if not locations or 'ALL' in loc_all:
+    locations = loc_all if loc_all else ['ALL']
+    if not locations or 'ALL' in locations:
         locations = ['ALL']
     
     industries_filter = combine_filters([ind_all, ind1, ind2, ind3, ind4])
@@ -659,21 +646,23 @@ def update_nationality(loc_all, loc_states, ind_all, ind1, ind2, ind3, ind4,
             'Job_Achieved_Pct': [62, 62, 62, 63, 63, 63, 69, 69, 72, 75]
         })
     
+    # Using wireframe colors: #002E79, #5288E0, #9BC1FF
     fig = px.bar(nationality_data, 
                  x='Job_Achieved_Pct', 
                  y='Nationality',
                  orientation='h',
                  color='Job_Achieved_Pct',
-                 color_continuous_scale=['#c6dff5', '#9bc3e8', '#5a9bd5', '#2d5b8b', '#1e3a5f'],
+                 color_continuous_scale=['#9BC1FF', '#5288E0', '#002E79'],
                  text='Job_Achieved_Pct')
     
-    fig.update_traces(texttemplate='%{text:.0f}', textposition='inside', textfont=dict(size=11, color='white', weight='bold'))
+    fig.update_traces(texttemplate='%{text:.0f}', textposition='inside', 
+                     textfont=dict(size=11, color='white', weight='bold'))
     fig.update_layout(
         xaxis_title='% of Job Achieved',
         yaxis_title='',
         showlegend=False,
         margin=dict(l=5, r=5, t=5, b=25),
-        height=545,
+        height=560,
         plot_bgcolor='white',
         paper_bgcolor='white',
         xaxis=dict(gridcolor='lightgray', title_font=dict(size=10), range=[0, 100], tickfont=dict(size=9)),
@@ -689,8 +678,6 @@ def update_nationality(loc_all, loc_states, ind_all, ind1, ind2, ind3, ind4,
     [Output('median-salary', 'children'),
      Output('mean-salary', 'children')],
     [Input('location-filter', 'value'),
-     Input('location-states', 'value'),
-     Input('location-states2', 'value'),
      Input('industry-filter-all', 'value'),
      Input('industry-filter1', 'value'),
      Input('industry-filter2', 'value'),
@@ -702,11 +689,11 @@ def update_nationality(loc_all, loc_states, ind_all, ind1, ind2, ind3, ind4,
      Input('employment-filter', 'value'),
      Input('employment-filter2', 'value'),
      Input('year-filter', 'value')])
-def update_salary(loc_all, loc_states, ind_all, ind1, ind2, ind3, ind4, 
+def update_salary(loc_all, ind_all, ind1, ind2, ind3, ind4, 
                   study1, study2, study3, emp1, emp2, years_filter):
     
-    locations = combine_filters([loc_all, loc_states])
-    if not locations or 'ALL' in loc_all:
+    locations = loc_all if loc_all else ['ALL']
+    if not locations or 'ALL' in locations:
         locations = ['ALL']
     
     industries_filter = combine_filters([ind_all, ind1, ind2, ind3, ind4])
@@ -735,12 +722,10 @@ def update_salary(loc_all, loc_states, ind_all, ind1, ind2, ind3, ind4,
     return median_sal_str, mean_sal_str
 
 
-# Callback for employment rate - Navy blue donut
+# Callback for employment rate - Using wireframe colors
 @app.callback(
     Output('employment-rate', 'figure'),
     [Input('location-filter', 'value'),
-     Input('location-states', 'value'),
-     Input('location-states2', 'value'),
      Input('industry-filter-all', 'value'),
      Input('industry-filter1', 'value'),
      Input('industry-filter2', 'value'),
@@ -752,11 +737,11 @@ def update_salary(loc_all, loc_states, ind_all, ind1, ind2, ind3, ind4,
      Input('employment-filter', 'value'),
      Input('employment-filter2', 'value'),
      Input('year-filter', 'value')])
-def update_employment_rate(loc_all, loc_states, ind_all, ind1, ind2, ind3, ind4, 
+def update_employment_rate(loc_all, ind_all, ind1, ind2, ind3, ind4, 
                            study1, study2, study3, emp1, emp2, years_filter):
     
-    locations = combine_filters([loc_all, loc_states])
-    if not locations or 'ALL' in loc_all:
+    locations = loc_all if loc_all else ['ALL']
+    if not locations or 'ALL' in locations:
         locations = ['ALL']
     
     industries_filter = combine_filters([ind_all, ind1, ind2, ind3, ind4])
@@ -776,7 +761,7 @@ def update_employment_rate(loc_all, loc_states, ind_all, ind1, ind2, ind3, ind4,
     if 'Employment_Rate' in filtered_df.columns and len(filtered_df) > 0:
         emp_rate = filtered_df['Employment_Rate'].mean()
     else:
-        emp_rate = 79
+        emp_rate = 85
     
     donut_data = pd.DataFrame({
         'Category': ['Employed', 'Unemployed'],
@@ -786,16 +771,16 @@ def update_employment_rate(loc_all, loc_states, ind_all, ind1, ind2, ind3, ind4,
     fig = px.pie(donut_data, 
                  values='Value', 
                  names='Category',
-                 hole=0.65,
+                 hole=0.7,
                  color='Category',
-                 color_discrete_map={'Employed': '#1e3a5f', 'Unemployed': '#e6e6e6'})
+                 color_discrete_map={'Employed': '#002E79', 'Unemployed': '#e6e6e6'})
     
     fig.update_traces(textinfo='none', showlegend=False)
     
     fig.add_annotation(
         text=f'{emp_rate:.0f}%',
         x=0.5, y=0.5,
-        font=dict(size=28, color='#1e3a5f', weight='bold'),
+        font=dict(size=32, color='#002E79', weight='bold'),
         showarrow=False,
         xref='paper',
         yref='paper'
@@ -803,19 +788,17 @@ def update_employment_rate(loc_all, loc_states, ind_all, ind1, ind2, ind3, ind4,
     
     fig.update_layout(
         margin=dict(l=5, r=5, t=5, b=5),
-        height=135,
+        height=140,
         paper_bgcolor='white'
     )
     
     return fig
 
 
-# Callback for gender ratio - Lighter blue shades matching wireframe
+# Callback for gender ratio - Using wireframe colors
 @app.callback(
     Output('gender-ratio', 'figure'),
     [Input('location-filter', 'value'),
-     Input('location-states', 'value'),
-     Input('location-states2', 'value'),
      Input('industry-filter-all', 'value'),
      Input('industry-filter1', 'value'),
      Input('industry-filter2', 'value'),
@@ -827,11 +810,11 @@ def update_employment_rate(loc_all, loc_states, ind_all, ind1, ind2, ind3, ind4,
      Input('employment-filter', 'value'),
      Input('employment-filter2', 'value'),
      Input('year-filter', 'value')])
-def update_gender_ratio(loc_all, loc_states, ind_all, ind1, ind2, ind3, ind4, 
+def update_gender_ratio(loc_all, ind_all, ind1, ind2, ind3, ind4, 
                         study1, study2, study3, emp1, emp2, years_filter):
     
-    locations = combine_filters([loc_all, loc_states])
-    if not locations or 'ALL' in loc_all:
+    locations = loc_all if loc_all else ['ALL']
+    if not locations or 'ALL' in locations:
         locations = ['ALL']
     
     industries_filter = combine_filters([ind_all, ind1, ind2, ind3, ind4])
@@ -857,33 +840,31 @@ def update_gender_ratio(loc_all, loc_states, ind_all, ind1, ind2, ind3, ind4,
     else:
         gender_data = pd.DataFrame({
             'Gender': ['Male', 'Female', 'Others'],
-            'Count': [62.5, 25, 12.5]
+            'Count': [53.2, 33.4, 13.4]
         })
     
     fig = px.pie(gender_data, 
                  values='Count', 
                  names='Gender',
                  color='Gender',
-                 color_discrete_map={'Male': '#1e3a5f', 'Female': '#a8c8e8', 'Others': '#e3f0fa'})
+                 color_discrete_map={'Male': '#002E79', 'Female': '#9BC1FF', 'Others': '#e3f0fa'})
     
     fig.update_traces(textposition='inside', textinfo='label+percent', 
                      textfont=dict(size=10, color='white', weight='bold'))
     fig.update_layout(
         margin=dict(l=5, r=5, t=5, b=5),
         showlegend=False,
-        height=135,
+        height=140,
         paper_bgcolor='white'
     )
     
     return fig
 
 
-# Callback for migration reasons - Navy blue stacked bars
+# Callback for migration reasons - Using wireframe colors
 @app.callback(
     Output('migration-reasons', 'figure'),
     [Input('location-filter', 'value'),
-     Input('location-states', 'value'),
-     Input('location-states2', 'value'),
      Input('industry-filter-all', 'value'),
      Input('industry-filter1', 'value'),
      Input('industry-filter2', 'value'),
@@ -895,11 +876,11 @@ def update_gender_ratio(loc_all, loc_states, ind_all, ind1, ind2, ind3, ind4,
      Input('employment-filter', 'value'),
      Input('employment-filter2', 'value'),
      Input('year-filter', 'value')])
-def update_migration_reasons(loc_all, loc_states, ind_all, ind1, ind2, ind3, ind4, 
+def update_migration_reasons(loc_all, ind_all, ind1, ind2, ind3, ind4, 
                              study1, study2, study3, emp1, emp2, years_filter):
     
-    locations = combine_filters([loc_all, loc_states])
-    if not locations or 'ALL' in loc_all:
+    locations = loc_all if loc_all else ['ALL']
+    if not locations or 'ALL' in locations:
         locations = ['ALL']
     
     industries_filter = combine_filters([ind_all, ind1, ind2, ind3, ind4])
@@ -941,10 +922,10 @@ def update_migration_reasons(loc_all, loc_states, ind_all, ind1, ind2, ind3, ind
         y=reasons,
         x=male_data,
         orientation='h',
-        marker=dict(color='#1e3a5f'),
+        marker=dict(color='#002E79'),
         text=[f'{val/total_students*100:.1f}%' if total_students > 0 else '0%' for val in male_data],
         textposition='inside',
-        textfont=dict(size=8, color='white', weight='bold'),
+        textfont=dict(size=10, color='white', weight='bold'),
         hovertemplate='%{y}<br>Male: %{x}<br>%{text}<extra></extra>'
     ))
     
@@ -953,10 +934,10 @@ def update_migration_reasons(loc_all, loc_states, ind_all, ind1, ind2, ind3, ind
         y=reasons,
         x=female_data,
         orientation='h',
-        marker=dict(color='#8cb5db'),
+        marker=dict(color='#9BC1FF'),
         text=[f'{val/total_students*100:.1f}%' if total_students > 0 else '0%' for val in female_data],
         textposition='inside',
-        textfont=dict(size=8, color='white', weight='bold'),
+        textfont=dict(size=10, color='#000', weight='bold'),
         hovertemplate='%{y}<br>Female: %{x}<br>%{text}<extra></extra>'
     ))
     
@@ -964,8 +945,8 @@ def update_migration_reasons(loc_all, loc_states, ind_all, ind1, ind2, ind3, ind
         barmode='stack',
         xaxis_title='Number of Students',
         yaxis_title='',
-        margin=dict(l=5, r=5, t=5, b=25),
-        height=315,
+        margin=dict(l=5, r=5, t=5, b=30),
+        height=340,
         plot_bgcolor='white',
         paper_bgcolor='white',
         legend=dict(
@@ -974,10 +955,10 @@ def update_migration_reasons(loc_all, loc_states, ind_all, ind1, ind2, ind3, ind
             y=1.01, 
             xanchor='right', 
             x=1, 
-            font=dict(size=9)
+            font=dict(size=10)
         ),
-        yaxis=dict(autorange='reversed', tickfont=dict(size=8)),
-        xaxis=dict(tickfont=dict(size=8), gridcolor='lightgray', title_font=dict(size=9))
+        yaxis=dict(autorange='reversed', tickfont=dict(size=10)),
+        xaxis=dict(tickfont=dict(size=9), gridcolor='lightgray', title_font=dict(size=10))
     )
     
     return fig
