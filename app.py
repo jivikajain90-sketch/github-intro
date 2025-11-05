@@ -315,8 +315,8 @@ app.layout = html.Div([
                        style={'backgroundColor': '#5288E0', 'color': 'white', 
                               'fontSize': '11px', 'fontWeight': '600'}),
                 html.Div([
-                    dcc.Graph(id='australia-map', style={'height': '560px'}, config={'displayModeBar': False})
-                ], style={'padding': '3px', 'height': '560px'})
+                    dcc.Graph(id='australia-map', style={'height': '580px'}, config={'displayModeBar': False})
+                ], style={'padding': '3px', 'height': '580px'})
             ], className='chart-box', style={'height': '590px', 'marginBottom': '5px'}),
             
         ], style={'width': '36%', 'display': 'inline-block', 'verticalAlign': 'top', 'paddingLeft': '5px', 'border': '2px solid #000'}),
@@ -594,7 +594,7 @@ def update_map(loc_all, ind_all, ind1, ind2, ind3, ind4,
         margin=dict(l=0, r=0, t=5, b=0),
         paper_bgcolor='white',
         coloraxis_showscale=False,
-        height=560
+        height=580
     )
     
     return fig
