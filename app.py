@@ -30,7 +30,8 @@ app.index_string = '''
                 height: 14px;
                 margin-right: 4px;
                 accent-color: #002E79;
-                cursor: pointer;
+                cursor: pointer
+                border: 2px solid #000;
             }
             
             .custom-checkbox label {
@@ -71,7 +72,7 @@ app.index_string = '''
             .filter-group {
                 background-color: white;
                 padding: 8px;
-                border-radius: 0px;
+                border-radius: 2px;
                 margin-bottom: 8px;
                 border: 1px solid #ccc;
             }
@@ -318,7 +319,7 @@ app.layout = html.Div([
                 ], style={'padding': '3px', 'height': '560px'})
             ], className='chart-box', style={'height': '590px', 'marginBottom': '5px'}),
             
-        ], style={'width': '36%', 'display': 'inline-block', 'verticalAlign': 'top', 'paddingLeft': '5px'}),
+        ], style={'width': '36%', 'display': 'inline-block', 'verticalAlign': 'top', 'paddingLeft': '5px', 'border': '2px solid #000'}),
         
         # Middle-Right Section - Nationality
         html.Div([
@@ -330,7 +331,7 @@ app.layout = html.Div([
                 dcc.Graph(id='nationality-chart', style={'height': '560px'}, config={'displayModeBar': False})
             ], style={'padding': '3px', 'height': '560px'})
         ], className='chart-box', style={'width': '23%', 'display': 'inline-block', 
-                 'verticalAlign': 'top', 'marginLeft': '5px', 'height': '590px'}),
+                 'verticalAlign': 'top', 'marginLeft': '5px', 'height': '590px', 'border': '2px solid #000'}),
         
         # Right Section - Salary and Demographics
         html.Div([
@@ -847,7 +848,7 @@ def update_gender_ratio(loc_all, ind_all, ind1, ind2, ind3, ind4,
                  values='Count', 
                  names='Gender',
                  color='Gender',
-                 color_discrete_map={'Male': '#002E79', 'Female': '#9BC1FF', 'Others': '#e3f0fa'})
+                 color_discrete_map={'Male': '#9BC1FF', 'Female': '#002E79', 'Others': '#5288E0'})
     
     fig.update_traces(textposition='inside', textinfo='label+percent', 
                      textfont=dict(size=10, color='white', weight='bold'))
