@@ -418,7 +418,7 @@ app.layout = html.Div([
                    href='https://qilt.edu.au/docs/default-source/default-document-library/2024-gos-international-report.pdf?sfvrsn=168c5da_1',
                    target='_blank',
                    style={'fontSize': '16px', 'color': '#002E79', 'textDecoration': 'none', 'fontWeight': '600'})
-        ], className='source-box', style={'width': '68%', 'marginLeft': '20px', 'marginTop': '-70px', 
+        ], className='source-box', style={'width': '68%', 'marginLeft': '24px', 'marginTop': '-75px', 
                                           'padding': '2px', 'textAlign': 'center'})
     ]),
     
