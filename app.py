@@ -72,7 +72,7 @@ app.index_string = '''
                 background-color: white;
                 padding: 8px;
                 border-radius: 0px;
-                margin-bottom: 8px;
+                margin-bottom: 0px;
                 border-top: 2px solid #000;
                 border-bottom: 2px solid #000;
                 border-left: 1px solid #ccc;
@@ -339,7 +339,7 @@ app.layout = html.Div([
                 html.Div([
                     dcc.Graph(id='australia-map', style={'height': '530px'}, config={'displayModeBar': False})
                 ], style={'padding': '0px', 'height': '530px'})
-            ], className='chart-box', style={'height': '555px', 'marginBottom': '1px'}),
+            ], className='chart-box', style={'height': '570px', 'marginBottom': '0px'}),
             
         ], style={'width': '36%', 'display': 'inline-block', 'verticalAlign': 'top', 'paddingLeft': '5px'}),
         
@@ -353,7 +353,7 @@ app.layout = html.Div([
                 dcc.Graph(id='nationality-chart', style={'height': '530px'}, config={'displayModeBar': False})
             ], style={'padding': '0px', 'height': '530px'})
         ], className='chart-box', style={'width': '23%', 'display': 'inline-block', 
-                 'verticalAlign': 'top', 'marginLeft': '5px', 'height': '555px'}),
+                 'verticalAlign': 'top', 'marginLeft': '5px', 'height': '570px', 'marginBottom': '0px'}),
         
         # Right Section - Salary and Demographics
         html.Div([
@@ -413,13 +413,13 @@ app.layout = html.Div([
     html.Div([
         html.Div([
             html.Div('Source: Graduate Outcomes Survey (2024)', 
-                    style={'marginBottom': '6px', 'fontWeight': '700', 'color': '#002E79', 'fontSize': '14px'}),
+                    style={'marginBottom': '6px', 'fontWeight': '700', 'color': '#002E79', 'fontSize': '20px'}),
             html.A('Link for in-depth report', 
                    href='https://qilt.edu.au/docs/default-source/default-document-library/2024-gos-international-report.pdf?sfvrsn=168c5da_1',
                    target='_blank',
                    style={'fontSize': '13px', 'color': '#002E79', 'textDecoration': 'none', 'fontWeight': '600'})
-        ], className='source-box', style={'width': '70%', 'marginLeft': '0', 'marginTop': '0', 
-                                          'padding': '15px', 'textAlign': 'center'})
+        ], className='source-box', style={'width': '68%', 'marginLeft': '0', 'marginTop': '0', 
+                                          'padding': '10px', 'textAlign': 'center'})
     ]),
     
 ], style={'fontFamily': 'Arial, sans-serif', 'backgroundColor': '#ffffff', 'margin': '0', 'padding': '0', 'height': '100vh', 'overflow': 'hidden'})
@@ -959,7 +959,7 @@ def update_migration_reasons(loc_all, ind_all, ind1, ind2, ind3, ind4,
         marker=dict(color='#002E79'),
         text=[f'{val/total_students*100:.1f}%' if total_students > 0 else '0%' for val in male_data],
         textposition='inside',
-        textfont=dict(size=10, color='white', weight='bold'),
+        textfont=dict(size=12, color='white', weight='bold'),
         hovertemplate='%{y}<br>Male: %{x}<br>%{text}<extra></extra>'
     ))
     
