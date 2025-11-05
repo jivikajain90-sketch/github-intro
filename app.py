@@ -97,7 +97,7 @@ app.index_string = '''
             .source-box {
                 background-color: white;
                 border: 2px solid #000;
-                padding: 2px;
+                padding: 0px;
                 text-align: center;
                 font-size: 9px;
                 line-height: 1.4;
@@ -413,11 +413,11 @@ app.layout = html.Div([
     html.Div([
         html.Div([
             html.Div('Source: Graduate Outcomes Survey (2024)', 
-                    style={'marginBottom': '3px', 'fontWeight': '600', 'color': '#002E79', 'fontSize': '20px'}),
+                    style={'marginBottom': '0px', 'fontWeight': '600', 'color': '#002E79', 'fontSize': '20px'}),
             html.A('Link for in-depth report', 
                    href='https://qilt.edu.au/docs/default-source/default-document-library/2024-gos-international-report.pdf?sfvrsn=168c5da_1',
                    target='_blank',
-                   style={'fontSize': '13px', 'color': '#002E79', 'textDecoration': 'none', 'fontWeight': '600'})
+                   style={'fontSize': '16px', 'color': '#002E79', 'textDecoration': 'none', 'fontWeight': '600'})
         ], className='source-box', style={'width': '68%', 'marginLeft': '0', 'marginTop': '0', 
                                           'padding': '2px', 'textAlign': 'center'})
     ]),
