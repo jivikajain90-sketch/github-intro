@@ -315,8 +315,8 @@ app.layout = html.Div([
                               'fontSize': '11px', 'fontWeight': '600'}),
                 html.Div([
                     dcc.Graph(id='australia-map', style={'height': '580px'}, config={'displayModeBar': False})
-                ], style={'padding': '3px', 'height': '580px'})
-            ], className='chart-box', style={'height': '590px', 'marginBottom': '5px'}),
+                ], style={'padding': '2px', 'height': '580px'})
+            ], className='chart-box', style={'height': '590px', 'marginBottom': '2px'}),
             
         ], style={'width': '36%', 'display': 'inline-block', 'verticalAlign': 'top', 'paddingLeft': '5px'}),
         
@@ -328,9 +328,9 @@ app.layout = html.Div([
                           'fontSize': '11px', 'fontWeight': '600'}),
             html.Div([
                 dcc.Graph(id='nationality-chart', style={'height': '560px'}, config={'displayModeBar': False})
-            ], style={'padding': '3px', 'height': '560px'})
+            ], style={'padding': '2px', 'height': '560px'})
         ], className='chart-box', style={'width': '23%', 'display': 'inline-block', 
-                 'verticalAlign': 'top', 'marginLeft': '5px', 'height': '590px'}),
+                 'verticalAlign': 'top', 'marginLeft': '2px', 'height': '590px'}),
         
         # Right Section - Salary and Demographics
         html.Div([
