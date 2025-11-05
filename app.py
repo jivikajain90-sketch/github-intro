@@ -97,7 +97,7 @@ app.index_string = '''
             .source-box {
                 background-color: white;
                 border: 2px solid #000;
-                padding: 8px;
+                padding: 2px;
                 text-align: center;
                 font-size: 9px;
                 line-height: 1.4;
@@ -326,7 +326,7 @@ app.layout = html.Div([
             ], className='filter-group'),
             
         ], className='sidebar-filters', style={'width': '13%', 'display': 'inline-block', 'verticalAlign': 'top',
-                  'padding': '8px', 'height': '610px', 'overflowY': 'auto'}),
+                  'padding': '3px', 'height': '590px', 'overflowY': 'auto'}),
         
         # Middle Section - Maps
         html.Div([
@@ -413,13 +413,13 @@ app.layout = html.Div([
     html.Div([
         html.Div([
             html.Div('Source: Graduate Outcomes Survey (2024)', 
-                    style={'marginBottom': '6px', 'fontWeight': '700', 'color': '#002E79', 'fontSize': '20px'}),
+                    style={'marginBottom': '3px', 'fontWeight': '600', 'color': '#002E79', 'fontSize': '20px'}),
             html.A('Link for in-depth report', 
                    href='https://qilt.edu.au/docs/default-source/default-document-library/2024-gos-international-report.pdf?sfvrsn=168c5da_1',
                    target='_blank',
                    style={'fontSize': '13px', 'color': '#002E79', 'textDecoration': 'none', 'fontWeight': '600'})
         ], className='source-box', style={'width': '68%', 'marginLeft': '0', 'marginTop': '0', 
-                                          'padding': '10px', 'textAlign': 'center'})
+                                          'padding': '2px', 'textAlign': 'center'})
     ]),
     
 ], style={'fontFamily': 'Arial, sans-serif', 'backgroundColor': '#ffffff', 'margin': '0', 'padding': '0', 'height': '100vh', 'overflow': 'hidden'})
@@ -1000,3 +1000,4 @@ def update_migration_reasons(loc_all, ind_all, ind1, ind2, ind3, ind4,
 
 if __name__ == '__main__':
     app.run(debug=True)
+
