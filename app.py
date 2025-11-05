@@ -310,7 +310,7 @@ app.layout = html.Div([
                 ),
             ], className='filter-group'),
             
-        ], className='sidebar-filters', style={'width': '13.5%', 'display': 'inline-block', 'verticalAlign': 'top',
+        ], className='sidebar-filters', style={'width': '12%', 'display': 'inline-block', 'verticalAlign': 'top',
                   'padding': '8px', 'height': '610px', 'overflowY': 'auto'}),
         
         # Middle Section - Maps and Charts
@@ -322,11 +322,11 @@ app.layout = html.Div([
                        style={'backgroundColor': '#6ba3d8', 'color': 'white', 
                               'fontSize': '11px', 'fontWeight': '600'}),
                 html.Div([
-                    dcc.Graph(id='australia-map', style={'height': '545px'}, config={'displayModeBar': False})
-                ], style={'padding': '5px', 'height': '545px'})
-            ], className='chart-box', style={'height': '575px', 'marginBottom': '5px'}),
+                    dcc.Graph(id='australia-map', style={'height': '570px'}, config={'displayModeBar': False})
+                ], style={'padding': '5px', 'height': '570px'})
+            ], className='chart-box', style={'height': '580px', 'marginBottom': '5px'}),
             
-        ], style={'width': '41%', 'display': 'inline-block', 'verticalAlign': 'top', 'paddingLeft': '5px'}),
+        ], style={'width': '38%', 'display': 'inline-block', 'verticalAlign': 'top', 'paddingLeft': '5px'}),
         
         # Middle-Right Section - Nationality
         html.Div([
@@ -335,10 +335,10 @@ app.layout = html.Div([
                    style={'backgroundColor': '#6ba3d8', 'color': 'white',
                           'fontSize': '11px', 'fontWeight': '600'}),
             html.Div([
-                dcc.Graph(id='nationality-chart', style={'height': '545px'}, config={'displayModeBar': False})
-            ], style={'padding': '5px', 'height': '545px'})
-        ], className='chart-box', style={'width': '26%', 'display': 'inline-block', 
-                 'verticalAlign': 'top', 'marginLeft': '5px', 'height': '575px'}),
+                dcc.Graph(id='nationality-chart', style={'height': '570px'}, config={'displayModeBar': False})
+            ], style={'padding': '5px', 'height': '570px'})
+        ], className='chart-box', style={'width': '25%', 'display': 'inline-block', 
+                 'verticalAlign': 'top', 'marginLeft': '5px', 'height': '580px'}),
         
         # Right Section - Salary and Demographics
         html.Div([
@@ -391,7 +391,7 @@ app.layout = html.Div([
                 ], style={'padding': '5px'})
             ], className='chart-box'),
             
-        ], style={'width': '18%', 'display': 'inline-block', 'verticalAlign': 'top', 'marginLeft': '5px'}),
+        ], style={'width': '25%', 'display': 'inline-block', 'verticalAlign': 'top', 'marginLeft': '5px'}),
     ], style={'marginTop': '5px'}),
     
 ], style={'fontFamily': 'Arial, sans-serif', 'backgroundColor': '#ffffff', 'margin': '0', 'padding': '0', 'height': '100vh', 'overflow': 'hidden'})
