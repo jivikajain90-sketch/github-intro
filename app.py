@@ -337,9 +337,9 @@ app.layout = html.Div([
                        style={'backgroundColor': '#5288E0', 'color': 'white', 
                               'fontSize': '11px', 'fontWeight': '600'}),
                 html.Div([
-                    dcc.Graph(id='australia-map', style={'height': '560px'}, config={'displayModeBar': False})
-                ], style={'padding': '0px', 'height': '560px'})
-            ], className='chart-box', style={'height': '590px', 'marginBottom': '5px'}),
+                    dcc.Graph(id='australia-map', style={'height': '550px'}, config={'displayModeBar': False})
+                ], style={'padding': '0px', 'height': '550px'})
+            ], className='chart-box', style={'height': '580px', 'marginBottom': '2px'}),
             
         ], style={'width': '36%', 'display': 'inline-block', 'verticalAlign': 'top', 'paddingLeft': '5px'}),
         
@@ -350,10 +350,10 @@ app.layout = html.Div([
                    style={'backgroundColor': '#5288E0', 'color': 'white',
                           'fontSize': '11px', 'fontWeight': '600'}),
             html.Div([
-                dcc.Graph(id='nationality-chart', style={'height': '560px'}, config={'displayModeBar': False})
-            ], style={'padding': '0px', 'height': '560px'})
+                dcc.Graph(id='nationality-chart', style={'height': '550px'}, config={'displayModeBar': False})
+            ], style={'padding': '0px', 'height': '550px'})
         ], className='chart-box', style={'width': '23%', 'display': 'inline-block', 
-                 'verticalAlign': 'top', 'marginLeft': '5px', 'height': '590px'}),
+                 'verticalAlign': 'top', 'marginLeft': '5px', 'height': '580px'}),
         
         # Right Section - Salary and Demographics
         html.Div([
@@ -413,13 +413,13 @@ app.layout = html.Div([
     html.Div([
         html.Div([
             html.Div('Source: Graduate Outcomes Survey (2024)', 
-                    style={'marginBottom': '4px', 'fontWeight': '700', 'color': '#002E79', 'fontSize': '11px'}),
+                    style={'marginBottom': '6px', 'fontWeight': '700', 'color': '#002E79', 'fontSize': '14px'}),
             html.A('Link for in-depth report', 
                    href='https://qilt.edu.au/docs/default-source/default-document-library/2024-gos-international-report.pdf?sfvrsn=168c5da_1',
                    target='_blank',
-                   style={'fontSize': '11px', 'color': '#002E79', 'textDecoration': 'none', 'fontWeight': '600'})
-        ], className='source-box', style={'width': '72%', 'marginLeft': '13%', 'marginTop': '5px', 
-                                          'padding': '10px', 'textAlign': 'center'})
+                   style={'fontSize': '13px', 'color': '#002E79', 'textDecoration': 'none', 'fontWeight': '600'})
+        ], className='source-box', style={'width': '86%', 'marginLeft': '13.5%', 'marginTop': '2px', 
+                                          'padding': '12px', 'textAlign': 'center'})
     ]),
     
 ], style={'fontFamily': 'Arial, sans-serif', 'backgroundColor': '#ffffff', 'margin': '0', 'padding': '0', 'height': '100vh', 'overflow': 'hidden'})
@@ -628,7 +628,7 @@ def update_map(loc_all, ind_all, ind1, ind2, ind3, ind4,
         margin=dict(l=0, r=0, t=0, b=0),
         paper_bgcolor='white',
         coloraxis_showscale=False,
-        height=560
+        height=550
     )
     
     return fig
@@ -696,7 +696,7 @@ def update_nationality(loc_all, ind_all, ind1, ind2, ind3, ind4,
         yaxis_title='',
         showlegend=False,
         margin=dict(l=5, r=5, t=0, b=20),
-        height=560,
+        height=550,
         plot_bgcolor='white',
         paper_bgcolor='white',
         xaxis=dict(gridcolor='lightgray', title_font=dict(size=10), range=[0, 100], tickfont=dict(size=9)),
