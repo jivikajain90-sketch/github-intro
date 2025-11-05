@@ -339,7 +339,7 @@ app.layout = html.Div([
                 html.Div([
                     dcc.Graph(id='australia-map', style={'height': '530px'}, config={'displayModeBar': False})
                 ], style={'padding': '0px', 'height': '530px'})
-            ], className='chart-box', style={'height': '555px', 'marginBottom': '3px'}),
+            ], className='chart-box', style={'height': '555px', 'marginBottom': '1px'}),
             
         ], style={'width': '36%', 'display': 'inline-block', 'verticalAlign': 'top', 'paddingLeft': '5px'}),
         
@@ -418,7 +418,7 @@ app.layout = html.Div([
                    href='https://qilt.edu.au/docs/default-source/default-document-library/2024-gos-international-report.pdf?sfvrsn=168c5da_1',
                    target='_blank',
                    style={'fontSize': '13px', 'color': '#002E79', 'textDecoration': 'none', 'fontWeight': '600'})
-        ], className='source-box', style={'width': '50%', 'marginLeft': '0', 'marginTop': '0', 
+        ], className='source-box', style={'width': '70%', 'marginLeft': '0', 'marginTop': '0', 
                                           'padding': '15px', 'textAlign': 'center'})
     ]),
     
