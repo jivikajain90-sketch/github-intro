@@ -30,8 +30,7 @@ app.index_string = '''
                 height: 14px;
                 margin-right: 4px;
                 accent-color: #002E79;
-                cursor: pointer
-                border: 2px solid #000;
+                cursor: pointer;
             }
             
             .custom-checkbox label {
@@ -319,7 +318,7 @@ app.layout = html.Div([
                 ], style={'padding': '3px', 'height': '580px'})
             ], className='chart-box', style={'height': '590px', 'marginBottom': '5px'}),
             
-        ], style={'width': '36%', 'display': 'inline-block', 'verticalAlign': 'top', 'paddingLeft': '5px', 'border': '2px solid #000'}),
+        ], style={'width': '36%', 'display': 'inline-block', 'verticalAlign': 'top', 'paddingLeft': '5px'}),
         
         # Middle-Right Section - Nationality
         html.Div([
@@ -331,7 +330,7 @@ app.layout = html.Div([
                 dcc.Graph(id='nationality-chart', style={'height': '560px'}, config={'displayModeBar': False})
             ], style={'padding': '3px', 'height': '560px'})
         ], className='chart-box', style={'width': '23%', 'display': 'inline-block', 
-                 'verticalAlign': 'top', 'marginLeft': '5px', 'height': '590px', 'border': '2px solid #000'}),
+                 'verticalAlign': 'top', 'marginLeft': '5px', 'height': '590px'}),
         
         # Right Section - Salary and Demographics
         html.Div([
